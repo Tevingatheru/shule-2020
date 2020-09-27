@@ -1,8 +1,10 @@
-package com.example.shule;
+package com.example.shule.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.shule.R;
 
 public class MainActivity extends AppCompatActivity {
 
