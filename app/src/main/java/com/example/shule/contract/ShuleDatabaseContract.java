@@ -33,7 +33,7 @@ public class ShuleDatabaseContract {
         public static final String SQL_CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "("+_ID +"INTEGER_PRIMARY_KEY" + COLUMN_GRADE_ID + COLUMN_GRADE_NAME + ")";
     }
 
-    public static final class TopicsInfo implements BaseColumns{
+    public static final class TopicInfo implements BaseColumns{
         public static final String TABLE_NAME = "topic";
         public static final String COLUMN_TOPIC_ID = "id";
         public static final String COLUMN_TOPIC_NAME = "topic";
