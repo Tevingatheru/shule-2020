@@ -19,7 +19,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-       
+
     }
 
     @Override
