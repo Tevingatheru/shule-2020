@@ -1,3 +1,4 @@
+
 package com.example.firebase.shule.activity;
 
 import android.content.Intent;
@@ -12,8 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firebase.shule.R;
-import com.example.firebase.shule.adapter.TopicAdapter;
-import com.example.firebase.shule.domain.Questions;
+import com.example.firebase.shule.adapter.QuestionAdapter;
+import com.example.firebase.shule.model.Question;
 import com.example.firebase.shule.util.FirebaseUtil;
 import com.example.firebase.shule.util.MenuUtil;
 import com.google.firebase.database.DatabaseReference;
@@ -24,14 +25,14 @@ import java.util.ArrayList;
 public class TopicActivity extends AppCompatActivity {
     public static FirebaseDatabase firebaseDatabase;
     public static DatabaseReference databaseReference;
-    ArrayList<Questions> dealList;
+    ArrayList<Question> dealList;
 
     private MenuUtil menuUtil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_topic);
         FirebaseUtil.openFbReference("traveldeals", this);
     }
 
@@ -84,7 +85,7 @@ public class TopicActivity extends AppCompatActivity {
     }
 
     public void setView(){
-        final TopicAdapter adapter = new TopicAdapter();
+        final QuestionAdapter adapter = new QuestionAdapter();
         final LinearLayoutManager dealLinearLayout =
                 new LinearLayoutManager( this, LinearLayoutManager.VERTICAL, false);
 

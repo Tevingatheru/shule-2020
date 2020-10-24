@@ -25,11 +25,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.firebase.shule.activity.ListActivity"
+            android:name="com.example.firebase.shule.activity.TopicActivity"
             android:label="List" >
         </activity>
         <activity
-            android:name="com.example.firebase.shule.activity.DealActivity"
+            android:name="com.example.firebase.shule.activity.QuestionActivity"
             android:label="@string/Insert_label" >
         </activity>
         <activity android:name="com.example.firebase.shule.activity.MainActivity" >

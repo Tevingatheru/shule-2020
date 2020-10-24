@@ -13,4 +13,8 @@
     <string name="view_deals_option">View Deals</string>
     <string name="logout_option">Logout</string>
     <string name="image_deals">image deals</string>
+    <string name="question">Can you read this?</string>
+    <string name="optionA">Yes</string>
+    <string name="optionB">No</string>
+    <string name="topic">Topic</string>
 </resources>

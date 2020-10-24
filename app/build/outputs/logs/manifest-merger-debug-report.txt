@@ -162,18 +162,18 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\tevin\.gradle\
 		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:11:9-40
-activity#com.example.firebase.shule.activity.ListActivity
+activity#com.example.firebase.shule.activity.TopicActivity
 ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:12:9-15:20
 	android:label
 		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:14:13-33
 	android:name
-		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:13:13-76
-activity#com.example.firebase.shule.activity.DealActivity
+		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:13:13-77
+activity#com.example.firebase.shule.activity.QuestionActivity
 ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:16:9-19:20
 	android:label
 		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:18:13-49
 	android:name
-		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:17:13-76
+		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:17:13-80
 activity#com.example.firebase.shule.activity.MainActivity
 ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:20:9-25:20
 	android:name

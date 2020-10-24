@@ -19,7 +19,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.firebase.shule.R;
-import com.example.firebase.shule.domain.Questions;
+import com.example.firebase.shule.model.Question;
+import com.example.firebase.shule.model.Topic;
 import com.example.firebase.shule.util.FirebaseUtil;
 import com.example.firebase.shule.util.MenuUtil;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -42,7 +43,7 @@ public class QuestionActivity extends AppCompatActivity {
     public static DatabaseReference databaseReference;
     public static final int PICTURE_RESULT = 42;
     private Button btnImage;
-    private Questions deal;
+    private Topic topic;
     private String uri;
     private Intent intent;
     private MenuUtil menuUtil;
@@ -51,7 +52,7 @@ public class QuestionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insert);
+        setContentView(R.layout.activity_question);
 
         listenToFB();
         initializeContent();
@@ -72,7 +73,7 @@ public class QuestionActivity extends AppCompatActivity {
         Log.d("Menu Option:", "item: " + item.getItemId() + "was selected");
         switch (item.getItemId()) {
             case R.id.save_option:
-                if (deal.getId() == null) {
+                if (topic.getId() == null) {
                     saveDeal();
                     Toast.makeText(this, "Deal Saved", Toast.LENGTH_LONG).show();
                     clean();
@@ -124,7 +125,7 @@ public class QuestionActivity extends AppCompatActivity {
         if (requestCode == PICTURE_RESULT && resultCode == RESULT_OK) {
             assert data != null;
             Uri imageUri = data.getData();
-            StorageReference reference = FirebaseUtil.storageReference.child(Objects.requireNonNull(imageUri.getLastPathSegment()));
+            StorageReference reference = FirebaseUtil.topicPicture.child(Objects.requireNonNull(imageUri.getLastPathSegment()));
             reference.putFile(imageUri).addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -150,8 +151,8 @@ public class QuestionActivity extends AppCompatActivity {
         String txtDescription = description.getText().toString();
         String txtPrice = price.getText().toString();
 
-        deal = new Questions(txtTitle, txtPrice, txtDescription, uri, imageName);
-        databaseReference.push().setValue(deal);
+        topic = new Question(txtTitle, txtPrice, txtDescription, uri, imageName);
+        databaseReference.push().setValue(topic);
     }
 
     private void initializeContent() {
@@ -162,9 +163,9 @@ public class QuestionActivity extends AppCompatActivity {
         btnImage = findViewById(R.id.btnImage);
 
         intent = getIntent();
-        this.deal = (Questions) intent.getSerializableExtra("Deal");
-        if(deal == null) {
-            deal = new Questions();
+        this.topic = (Question) intent.getSerializableExtra("Deal");
+        if(topic == null) {
+            topic = new Question();
         }
         setTravelDeal();
     }
@@ -187,14 +188,14 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     private void deleteDeal() {
-        if(deal.getId()==null) {
+        if(topic.getId()==null) {
             Toast.makeText(this, "Deal does not exist", Toast.LENGTH_LONG).show();
             Log.d("Delete: ", "failed");
 
             return;
         }
-        Log.d("Delete: ", deal.getId());
-        databaseReference.child(deal.getId()).removeValue();
+        Log.d("Delete: ", topic.getId());
+        databaseReference.child(topic.getId()).removeValue();
         deleteImage();
     }
 
@@ -204,24 +205,24 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     private void editDeal() {
-        deal.setTitle(title.getText().toString());
-        deal.setDescription(description.getText().toString());
-        deal.setPrice(price.getText().toString());
-        deal.setImageUri(uri);
-        if(deal.getId()==null) {
+        topic.setTitle(title.getText().toString());
+        topic.setDescription(description.getText().toString());
+        topic.setPrice(price.getText().toString());
+        topic.setImageUri(uri);
+        if(topic.getId()==null) {
             throw new NullPointerException();
         }
-        Log.d("Deal: ", "Edit: " +deal.getId());
+        Log.d("Deal: ", "Edit: " + topic.getId());
 
-        databaseReference.child(deal.getId()).setValue(deal);
+        databaseReference.child(topic.getId()).setValue(topic);
     }
 
     private void setTravelDeal() {
-        Log.d("Deal: ", "Selected: "+ deal.getId());
+        Log.d("Deal: ", "Selected: "+ topic.getId());
 
-        title.setText(deal.getTitle());
-        description.setText(deal.getDescription());
-        price.setText(deal.getPrice());
+        title.setText(topic.getTitle());
+        description.setText(topic.getDescription());
+        price.setText(topic.getPrice());
         showImage(uri);
     }
 
@@ -238,9 +239,9 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     private void deleteImage() {
-        if (deal.getImageName() != null && !deal.getImageName().isEmpty()) {
-            Log.d("Image: ", "Deleted " + deal.getImageName());
-            FirebaseUtil.storageReference.child(deal.getImageName()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+        if (topic.getImageName() != null && !topic.getImageName().isEmpty()) {
+            Log.d("Image: ", "Deleted " + topic.getImageName());
+            FirebaseUtil.topicPicture.child(topic.getImageName()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
                     Log.d("Delete","Success");
