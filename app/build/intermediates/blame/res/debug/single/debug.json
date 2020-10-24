@@ -12,6 +12,10 @@
         "source": "D:\\project\\shule\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
+        "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_answer.xml.flat",
+        "source": "D:\\project\\shule\\app\\src\\main\\res\\layout\\activity_answer.xml"
+    },
+    {
         "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\menu_activity_insert_menu.xml.flat",
         "source": "D:\\project\\shule\\app\\src\\main\\res\\menu\\activity_insert_menu.xml"
     },
@@ -26,10 +30,6 @@
     {
         "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "D:\\project\\shule\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_question.xml.flat",
-        "source": "D:\\project\\shule\\app\\src\\main\\res\\layout\\activity_question.xml"
     },
     {
         "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",

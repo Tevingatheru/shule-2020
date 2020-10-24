@@ -168,12 +168,12 @@ ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:12:9-15:20
 		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:14:13-33
 	android:name
 		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:13:13-77
-activity#com.example.firebase.shule.activity.QuestionActivity
+activity#com.example.firebase.shule.activity.AnswerActivity
 ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:16:9-19:20
 	android:label
 		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:18:13-49
 	android:name
-		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:17:13-80
+		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:17:13-78
 activity#com.example.firebase.shule.activity.MainActivity
 ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:20:9-25:20
 	android:name

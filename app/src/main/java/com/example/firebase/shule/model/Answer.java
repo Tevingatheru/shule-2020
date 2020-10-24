@@ -4,37 +4,70 @@ import java.io.Serializable;
 
 public class Answer implements Serializable {
 
-    private String answer;
-    private String isWrong;
-    private String status;
+    private String id;
+    private String optionA;
+    private String optionB;
+    private String optionC;
+    private String optionD;
+    private String correctOption;
 
-    public Answer(String answer, String isWrong, String status) {
-        this.answer = answer;
-        this.isWrong = isWrong;
-        this.status = status;
+    public Answer() {
     }
 
-    public String getAnswer() {
-        return answer;
+    public Answer(String optionA, String optionB, String optionC, String optionD, String correctOption) {
+        this.id = id;
+        this.optionA = optionA;
+        this.optionB = optionB;
+        this.optionC = optionC;
+        this.optionD = optionD;
+        this.correctOption = correctOption;
     }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
+    public String getId() {
+        return id;
     }
 
-    public String getIsWrong() {
-        return isWrong;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setIsWrong(String isWrong) {
-        this.isWrong = isWrong;
+    public String getOptionA() {
+        return optionA;
     }
 
-    public String getStatus() {
-        return status;
+    public void setOptionA(String optionA) {
+        this.optionA = optionA;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public String getOptionB() {
+        return optionB;
+    }
+
+    public void setOptionB(String optionB) {
+        this.optionB = optionB;
+    }
+
+    public String getOptionC() {
+        return optionC;
+    }
+
+    public void setOptionC(String optionC) {
+        this.optionC = optionC;
+    }
+
+    public String getOptionD() {
+        return optionD;
+    }
+
+    public void setOptionD(String optionD) {
+        this.optionD = optionD;
+    }
+
+    public String getCorrectOption() {
+        return correctOption;
+    }
+
+    public void setCorrectOption(String correctOption) {
+        this.correctOption = correctOption;
     }
 }

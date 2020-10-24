@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firebase.shule.R;
-import com.example.firebase.shule.adapter.QuestionAdapter;
+import com.example.firebase.shule.adapter.TopicAdapter;
 import com.example.firebase.shule.model.Question;
 import com.example.firebase.shule.util.FirebaseUtil;
 import com.example.firebase.shule.util.MenuUtil;
@@ -56,7 +56,7 @@ public class TopicActivity extends AppCompatActivity {
         Intent intent = new Intent();
         switch (item.getItemId()) {
             case R.id.add_option:
-                intent = new Intent(this, QuestionActivity.class);
+                intent = new Intent(this, AnswerActivity.class);
                 startActivity(intent);
                 return true;
             case R.id.logout_option:
@@ -85,7 +85,7 @@ public class TopicActivity extends AppCompatActivity {
     }
 
     public void setView(){
-        final QuestionAdapter adapter = new QuestionAdapter();
+        final TopicAdapter adapter = new TopicAdapter();
         final LinearLayoutManager dealLinearLayout =
                 new LinearLayoutManager( this, LinearLayoutManager.VERTICAL, false);
 

@@ -2,7 +2,6 @@ package com.example.firebase.shule.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,45 +13,42 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.firebase.shule.R;
-import com.example.firebase.shule.activity.QuestionActivity;
-import com.example.firebase.shule.model.Question;
+import com.example.firebase.shule.model.Topic;
 import com.example.firebase.shule.util.FirebaseUtil;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.DealViewHolder> {
 
-    ArrayList<Question> dealList;
+public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.DealViewHolder> {
+
+    ArrayList<Topic> topics;
     public static FirebaseDatabase firebaseDatabase;
     public static DatabaseReference databaseReference;
     private ChildEventListener childEventListener;
 
-    public QuestionAdapter() {
+    public AnswerAdapter() {
 
         listenToFB();
 
         childEventListener = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Question question;
+                Topic topic;
                 try {
-                    question = snapshot.getValue(Question.class);
+                    topic = snapshot.getValue(Topic.class);
                 } catch (RuntimeException e) {
-                    Log.e("error.initializing.traveldeal", e.getMessage(), e);
+                    Log.e("error.initializing", e.getMessage(), e);
                     throw new RuntimeException(e.getMessage(), e);
                 }
 
-                Log.i("Deal: ", question.getTitle());
-                question.setId(snapshot.getKey());
-                dealList.add(question);
-                notifyItemInserted(dealList.size() - 1);
+                topic.setId(snapshot.getKey());
+                topics.add(topic);
+                notifyItemInserted(topics.size() - 1);
             }
 
             @Override
@@ -94,19 +90,19 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.DealVi
 
     @Override
     public void onBindViewHolder(@NonNull DealViewHolder holder, int position) {
-        Question deal = dealList.get(position);
-        holder.bind(deal);
+        Topic topic = topics.get(position);
+        holder.bind(topic);
     }
 
     @Override
     public int getItemCount() {
-        return dealList.size();
+        return topics.size();
     }
 
     private void listenToFB() {
         firebaseDatabase = FirebaseUtil.firebaseDatabase;
         databaseReference = FirebaseUtil.databaseReference;
-        dealList = FirebaseUtil.deals;
+        topics = FirebaseUtil.topicUtilList;
     }
 
     public class DealViewHolder extends RecyclerView.ViewHolder
@@ -127,35 +123,20 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.DealVi
             itemView.setOnClickListener(this);
         }
 
-        public void bind (Question question) {
-            tvTitle.setText(question.getTitle());
-            tvPrice.setText(question.getPrice());
-            tvDescription.setText(question.getDescription());
-            if (question.getImageUri() != null && !question.getImageUri().isEmpty()) {
-                showImage(question.getImageUri());
-            }
+        public void bind (Topic topic) {
+            tvTitle.setText(topic.getTitle());
+            tvPrice.setText(topic.getPrice());
+            tvDescription.setText(topic.getDescription());
         }
 
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
             Log.d("Position: ", String.valueOf(position));
-            Question question = dealList.get(position);
-            Intent intent = new Intent(v.getContext(), QuestionActivity.class);
-            intent.putExtra("Deal", question);
+            TravelDeal travelDeal = topics.get(position);
+            Intent intent = new Intent(v.getContext(), DealActivity.class);
+            intent.putExtra("Deal", travelDeal);
             v.getContext().startActivity(intent);
-        }
-
-        private void showImage(String url) {
-            if (url != null && !url.isEmpty()) {
-                Log.d("Image: ", url);
-                int width = Resources.getSystem().getDisplayMetrics().widthPixels;
-                Picasso.with(ivImageDeal.getContext())
-                        .load(url)
-                        .resize(120,120)
-                        .centerCrop()
-                        .into(ivImageDeal);
-            }
         }
     }
 }

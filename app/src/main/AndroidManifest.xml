@@ -14,7 +14,7 @@
             android:label="List">
         </activity>
         <activity
-            android:name="com.example.firebase.shule.activity.QuestionActivity"
+            android:name="com.example.firebase.shule.activity.AnswerActivity"
             android:label="@string/Insert_label">
         </activity>
         <activity android:name="com.example.firebase.shule.activity.MainActivity">

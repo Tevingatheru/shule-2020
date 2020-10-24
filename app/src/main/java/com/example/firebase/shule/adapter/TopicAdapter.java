@@ -2,6 +2,7 @@ package com.example.firebase.shule.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.firebase.shule.R;
+import com.example.firebase.shule.activity.AnswerActivity;
 import com.example.firebase.shule.model.Topic;
 import com.example.firebase.shule.util.FirebaseUtil;
 import com.google.firebase.database.ChildEventListener;
@@ -20,13 +23,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-
 public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.DealViewHolder> {
 
-    ArrayList<Topic> topics;
+    ArrayList<Topic> topicList;
     public static FirebaseDatabase firebaseDatabase;
     public static DatabaseReference databaseReference;
     private ChildEventListener childEventListener;
@@ -42,13 +45,14 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.DealViewHold
                 try {
                     topic = snapshot.getValue(Topic.class);
                 } catch (RuntimeException e) {
-                    Log.e("error.initializing", e.getMessage(), e);
+                    Log.e("error.initializing.topic", e.getMessage(), e);
                     throw new RuntimeException(e.getMessage(), e);
                 }
 
+                Log.i("Deal: ", topic.getId());
                 topic.setId(snapshot.getKey());
-                topics.add(topic);
-                notifyItemInserted(topics.size() - 1);
+                topicList.add(topic);
+                notifyItemInserted(topicList.size() - 1);
             }
 
             @Override
@@ -90,53 +94,64 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.DealViewHold
 
     @Override
     public void onBindViewHolder(@NonNull DealViewHolder holder, int position) {
-        Topic topic = topics.get(position);
+        Topic topic = topicList.get(position);
         holder.bind(topic);
     }
 
     @Override
     public int getItemCount() {
-        return topics.size();
+        return topicList.size();
     }
 
     private void listenToFB() {
         firebaseDatabase = FirebaseUtil.firebaseDatabase;
         databaseReference = FirebaseUtil.databaseReference;
-        topics = FirebaseUtil.deals;
+        topicList = FirebaseUtil.topicUtilList;
     }
 
     public class DealViewHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener {
-        TextView tvTitle;
-        TextView tvPrice;
-        TextView tvDescription;
-        ImageView ivImageDeal;
+        TextView tvTopic;
+        ImageView ivImageTopic;
 
         public DealViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvTitle = (TextView) itemView.findViewById(R.id.row_title);
-            tvPrice = (TextView) itemView.findViewById(R.id.row_price);
-            tvDescription = (TextView) itemView.findViewById(R.id.row_description);
-            ivImageDeal = (ImageView) itemView.findViewById(R.id.row_image);
+            tvTopic = (TextView) itemView.findViewById(R.id.row_topic);
+
+            ivImageTopic = (ImageView) itemView.findViewById(R.id.row_image);
 
             itemView.setOnClickListener(this);
         }
 
         public void bind (Topic topic) {
-            tvTitle.setText(topic.getTitle());
-            tvPrice.setText(topic.getPrice());
-            tvDescription.setText(topic.getDescription());
+            tvTopic.setText(topic.getTopic());
+
+            if (topic.getImageUri() != null && !topic.getImageUri().isEmpty()) {
+                showImage(topic.getImageUri());
+            }
         }
 
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
             Log.d("Position: ", String.valueOf(position));
-            TravelDeal travelDeal = topics.get(position);
-            Intent intent = new Intent(v.getContext(), DealActivity.class);
-            intent.putExtra("Deal", travelDeal);
+            Topic topic = topicList.get(position);
+            Intent intent = new Intent(v.getContext(), AnswerActivity.class);
+            intent.putExtra("Deal", topic);
             v.getContext().startActivity(intent);
+        }
+
+        private void showImage(String url) {
+            if (url != null && !url.isEmpty()) {
+                Log.d("Image: ", url);
+                int width = Resources.getSystem().getDisplayMetrics().widthPixels;
+                Picasso.with(ivImageTopic.getContext())
+                        .load(url)
+                        .resize(120,120)
+                        .centerCrop()
+                        .into(ivImageTopic);
+            }
         }
     }
 }

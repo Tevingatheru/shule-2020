@@ -7,7 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.firebase.shule.activity.TopicActivity;
+import com.example.firebase.shule.model.Answer;
 import com.example.firebase.shule.model.Question;
+import com.example.firebase.shule.model.Topic;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -33,7 +35,10 @@ public class FirebaseUtil {
 
     public static FirebaseDatabase firebaseDatabase;
     public static DatabaseReference databaseReference;
-    public static ArrayList<Question> deals;
+    public static ArrayList<Topic> topicUtilList;
+    public static ArrayList<Question> questionUtilList;
+    public static ArrayList<Answer> answerUtilList;
+
     public static FirebaseStorage firebaseStorage;
     public static StorageReference topicPicture;
     private static StorageReference subjectPicture;
@@ -70,8 +75,15 @@ public class FirebaseUtil {
             };
             connectStorage();
         }
-        deals = new ArrayList<Question>();
+        initializeLists();
+
         databaseReference = firebaseDatabase.getReference().child(ref);
+    }
+
+    private static void initializeLists() {
+        topicUtilList = new ArrayList<Topic>();
+        questionUtilList = new ArrayList<Question>();
+        answerUtilList = new ArrayList<Answer>();
     }
 
     private static void checkMember(String userId) {

@@ -1,15 +1,17 @@
 package com.example.firebase.shule.model;
 
+import java.util.Set;
+
 public class Exam extends Topic {
     private Question question;
-    private Answer answer;
+    private Set<Answer> answer;
 
-    public Exam(Question question, Answer answer) {
+    public Exam(Question question, Set<Answer> answer) {
         this.question = question;
         this.answer = answer;
     }
 
-    public Exam(String topic, String imageUri, String imageName, Question question, Answer answer) {
+    public Exam(String topic, String imageUri, String imageName, Question question, Set<Answer> answer) {
         super(topic, imageUri, imageName);
         this.question = question;
         this.answer = answer;
@@ -23,11 +25,11 @@ public class Exam extends Topic {
         this.question = question;
     }
 
-    public Answer getAnswer() {
+    public Set<Answer> getAnswer() {
         return answer;
     }
 
-    public void setAnswer(Answer answer) {
+    public void setAnswer(Set<Answer> answer) {
         this.answer = answer;
     }
 }
