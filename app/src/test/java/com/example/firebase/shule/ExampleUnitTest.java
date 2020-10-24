@@ -1,4 +1,4 @@
-package com.example.shule;
+package com.example.firebase.shule;
 
 import org.junit.Test;
 
