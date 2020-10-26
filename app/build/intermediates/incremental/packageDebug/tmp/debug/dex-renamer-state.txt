@@ -1,4 +1,4 @@
-#Mon Oct 26 12:07:01 AST 2020
+#Mon Oct 26 14:34:38 AST 2020
 base.0=D\:\\project\\shule\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

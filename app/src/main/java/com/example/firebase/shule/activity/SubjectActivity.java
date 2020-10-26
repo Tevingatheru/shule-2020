@@ -1,8 +1,8 @@
 package com.example.firebase.shule.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.firebase.shule.R;
 import com.example.firebase.shule.contract.SubjectContract;
@@ -17,4 +17,18 @@ public class SubjectActivity extends AppCompatActivity implements SubjectContrac
 
     }
 
+    @Override
+    public void shouldOpenReference() {
+
+    }
+
+    @Override
+    public void shouldSetView() {
+
+    }
+
+    @Override
+    public void shouldTopicActivity() {
+
+    }
 }

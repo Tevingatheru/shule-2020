@@ -20,4 +20,9 @@ public class SubjectPresenter implements SubjectContract.Presenter {
     public void setView() {
 
     }
+
+    @Override
+    public void startTopicActivity() {
+
+    }
 }

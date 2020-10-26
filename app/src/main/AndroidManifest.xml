@@ -14,7 +14,7 @@
             android:name=".activity.TopicActivity"
             android:label="List"></activity>
         <activity
-            android:name=".activity.ExamHandleActivity"
+            android:name=".activity.ExamActivity"
             android:label="@string/Insert_label"></activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>

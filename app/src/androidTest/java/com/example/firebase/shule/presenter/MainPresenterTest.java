@@ -9,8 +9,6 @@ import org.junit.Test;
  */
 class MainPresenterTest {
 
-
-
     @Before
     void setUp() {
 

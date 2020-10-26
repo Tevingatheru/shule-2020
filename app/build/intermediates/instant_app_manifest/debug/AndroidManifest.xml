@@ -29,7 +29,7 @@
             android:name="com.example.firebase.shule.activity.TopicActivity"
             android:label="List" />
         <activity
-            android:name="com.example.firebase.shule.activity.ExamHandleActivity"
+            android:name="com.example.firebase.shule.activity.ExamActivity"
             android:label="@string/Insert_label" />
         <activity android:name="com.example.firebase.shule.activity.MainActivity" >
             <intent-filter>

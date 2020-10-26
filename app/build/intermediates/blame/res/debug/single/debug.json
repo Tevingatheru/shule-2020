@@ -1,9 +1,5 @@
 [
     {
-        "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\layout_rv_row.xml.flat",
-        "source": "D:\\project\\shule\\app\\src\\main\\res\\layout\\rv_row.xml"
-    },
-    {
         "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "D:\\project\\shule\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
@@ -30,6 +26,14 @@
     {
         "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "D:\\project\\shule\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\layout_topic_rv_row.xml.flat",
+        "source": "D:\\project\\shule\\app\\src\\main\\res\\layout\\topic_rv_row.xml"
+    },
+    {
+        "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\layout_subject_rv_row.xml.flat",
+        "source": "D:\\project\\shule\\app\\src\\main\\res\\layout\\subject_rv_row.xml"
     },
     {
         "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",

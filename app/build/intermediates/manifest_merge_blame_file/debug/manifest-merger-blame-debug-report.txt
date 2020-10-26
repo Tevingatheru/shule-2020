@@ -52,8 +52,8 @@
 29-->D:\project\shule\app\src\main\AndroidManifest.xml:15:13-33
 30        <activity
 30-->D:\project\shule\app\src\main\AndroidManifest.xml:16:9-18:61
-31            android:name="com.example.firebase.shule.activity.ExamHandleActivity"
-31-->D:\project\shule\app\src\main\AndroidManifest.xml:17:13-56
+31            android:name="com.example.firebase.shule.activity.ExamActivity"
+31-->D:\project\shule\app\src\main\AndroidManifest.xml:17:13-50
 32            android:label="@string/Insert_label" />
 32-->D:\project\shule\app\src\main\AndroidManifest.xml:18:13-49
 33        <activity android:name="com.example.firebase.shule.activity.MainActivity" >

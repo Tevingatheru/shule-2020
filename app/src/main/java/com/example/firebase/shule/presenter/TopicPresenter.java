@@ -8,4 +8,19 @@ public class TopicPresenter implements TopicContract.Presenter {
     public TopicPresenter(TopicContract.View view) {
         this.view = view;
     }
+
+    @Override
+    public void openReference() {
+
+    }
+
+    @Override
+    public void setView() {
+
+    }
+
+    @Override
+    public void startTopicActivity() {
+
+    }
 }

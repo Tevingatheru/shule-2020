@@ -1,7 +1,6 @@
 package com.example.firebase.shule.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -81,7 +80,7 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.DealViewHo
         View view;
         Context context = parent.getContext();
         try {
-            view = LayoutInflater.from(context).inflate(R.layout.rv_row, parent, false);
+            view = LayoutInflater.from(context).inflate(R.layout.subject_rv_row, parent, false);
         } catch (RuntimeException e) {
             Log.e("error.inflating.view", e.getMessage(), e);
             throw new RuntimeException("error.inflating.view", e);

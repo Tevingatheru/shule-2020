@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firebase.shule.R;
-import com.example.firebase.shule.activity.ExamHandleActivity;
+import com.example.firebase.shule.activity.ExamActivity;
 import com.example.firebase.shule.model.Topic;
 import com.example.firebase.shule.util.FirebaseUtil;
 import com.google.firebase.database.ChildEventListener;
@@ -84,7 +84,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.DealViewHold
         View view;
         Context context = parent.getContext();
         try {
-            view = LayoutInflater.from(context).inflate(R.layout.rv_row, parent, false);
+            view = LayoutInflater.from(context).inflate(R.layout.subject_rv_row, parent, false);
         } catch (RuntimeException e) {
             Log.e("error.inflating.view", e.getMessage(), e);
             throw new RuntimeException("error.inflating.view", e);
@@ -137,7 +137,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.DealViewHold
             int position = getAdapterPosition();
             Log.d("Position: ", String.valueOf(position));
             Topic topic = topicList.get(position);
-            Intent intent = new Intent(v.getContext(), ExamHandleActivity.class);
+            Intent intent = new Intent(v.getContext(), ExamActivity.class);
             intent.putExtra("Deal", topic);
             v.getContext().startActivity(intent);
         }
