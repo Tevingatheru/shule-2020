@@ -1,6 +1,5 @@
 package com.example.firebase.shule.presenter;
 
-import com.example.firebase.shule.activity.ExamActivity;
 import com.example.firebase.shule.contract.ExamContract;
 import com.example.firebase.shule.model.Answer;
 import com.example.firebase.shule.model.Exam;
@@ -38,7 +37,7 @@ public class ExamPresenter  implements ExamContract.Presenter {
 
     @Override
     public void listenToFb() {
-        FirebaseUtil.openExamReference("exam", new ExamActivity());
+        FirebaseUtil.openFbReference("exam");
         firebaseDatabase = FirebaseUtil.firebaseDatabase;
         databaseReference = FirebaseUtil.databaseReference;
     }

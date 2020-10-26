@@ -18,9 +18,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        hello = findViewById(R.id.hello);
+
         presenter = new MainPresenter(this);
-        presenter.startSubjectActivity();
+        presenter.sayHello();
     }
 
 
@@ -28,5 +28,13 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     public void shouldStartSubjectActivity() {
         Intent insertActivity = new Intent(MainActivity.this, TopicActivity.class);
         startActivity(insertActivity);
+    }
+
+    @Override
+    public void shouldSayHello() {
+        hello = findViewById(R.id.hello);
+
+//        presenter.startSubjectActivity();
+
     }
 }

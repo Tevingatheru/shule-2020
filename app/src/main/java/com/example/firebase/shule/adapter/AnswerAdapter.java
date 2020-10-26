@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.firebase.shule.R;
 import com.example.firebase.shule.model.Topic;
 import com.example.firebase.shule.util.FirebaseUtil;
 import com.google.firebase.database.ChildEventListener;
@@ -115,28 +116,28 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.DealViewHo
         public DealViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvTitle = (TextView) itemView.findViewById(R.id.row_title);
-            tvPrice = (TextView) itemView.findViewById(R.id.row_price);
-            tvDescription = (TextView) itemView.findViewById(R.id.row_description);
-            ivImageDeal = (ImageView) itemView.findViewById(R.id.row_image);
-
-            itemView.setOnClickListener(this);
+//            tvTitle = (TextView) itemView.findViewById(R.id.row_title);
+//            tvPrice = (TextView) itemView.findViewById(R.id.row_price);
+//            tvDescription = (TextView) itemView.findViewById(R.id.row_description);
+//            ivImageDeal = (ImageView) itemView.findViewById(R.id.row_image);
+//
+//            itemView.setOnClickListener(this);
         }
 
         public void bind (Topic topic) {
-            tvTitle.setText(topic.getTitle());
-            tvPrice.setText(topic.getPrice());
-            tvDescription.setText(topic.getDescription());
+//            tvTitle.setText(topic.getTitle());
+//            tvPrice.setText(topic.getPrice());
+//            tvDescription.setText(topic.getDescription());
         }
 
         @Override
         public void onClick(View v) {
-            int position = getAdapterPosition();
-            Log.d("Position: ", String.valueOf(position));
-            TravelDeal travelDeal = topics.get(position);
-            Intent intent = new Intent(v.getContext(), DealActivity.class);
-            intent.putExtra("Deal", travelDeal);
-            v.getContext().startActivity(intent);
+//            int position = getAdapterPosition();
+//            Log.d("Position: ", String.valueOf(position));
+//            TravelDeal travelDeal = topics.get(position);
+//            Intent intent = new Intent(v.getContext(), DealActivity.class);
+//            intent.putExtra("Deal", travelDeal);
+//            v.getContext().startActivity(intent);
         }
     }
 }

@@ -10,6 +10,11 @@ public class MainPresenter implements MainContract.Presenter {
     }
 
     @Override
+    public void sayHello() {
+        view.shouldSayHello();
+    }
+
+    @Override
     public void startSubjectActivity() {
         view.shouldStartSubjectActivity();
     }

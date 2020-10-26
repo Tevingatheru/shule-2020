@@ -2,9 +2,7 @@
 package com.example.firebase.shule.activity;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,7 +19,6 @@ import com.example.firebase.shule.util.FirebaseUtil;
 import com.example.firebase.shule.util.MenuUtil;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -36,7 +33,7 @@ public class TopicActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topic);
-        FirebaseUtil.openExamReference("traveldeals", this);
+//        FirebaseUtil.openExamReference("traveldeals", this);
     }
 
     @Override
@@ -59,7 +56,7 @@ public class TopicActivity extends AppCompatActivity {
         Intent intent = new Intent();
         switch (item.getItemId()) {
             case R.id.add_option:
-                intent = new Intent(this, ExamActivity.class);
+                intent = new Intent(this, ExamHandleActivity.class);
                 startActivity(intent);
                 return true;
             case R.id.logout_option:
@@ -98,15 +95,15 @@ public class TopicActivity extends AppCompatActivity {
     }
 
 
-    private void showImage(String url) {
-        if (url != null && !url.isEmpty()) {
-            Log.d("Image: ", url);
-            int width = Resources.getSystem().getDisplayMetrics().widthPixels;
-            Picasso.with(this)
-                    .load(url)
-                    .resize(width, width*2/3)
-                    .centerCrop()
-                    .into(imageView);
-        }
-    }
+//    private void showImage(String url) {
+//        if (url != null && !url.isEmpty()) {
+//            Log.d("Image: ", url);
+//            int width = Resources.getSystem().getDisplayMetrics().widthPixels;
+//            Picasso.with(this)
+//                    .load(url)
+//                    .resize(width, width*2/3)
+//                    .centerCrop()
+//                    .into(imageView);
+//        }
+//    }
 }
