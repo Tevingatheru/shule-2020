@@ -24,12 +24,8 @@ public class TopicActivity extends AppCompatActivity implements TopicContract.Vi
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.activity_list_menu, menu);
 
-
-
         return true;
     }
-
-  
 
     @Override
     protected void onPause() {
@@ -39,7 +35,6 @@ public class TopicActivity extends AppCompatActivity implements TopicContract.Vi
     @Override
     protected void onResume() {
         super.onResume();
-
     }
 
 

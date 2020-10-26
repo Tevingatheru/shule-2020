@@ -2,7 +2,6 @@ package com.example.firebase.shule.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +22,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -128,7 +126,6 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.DealViewHold
             tvTopic.setText(topic.getTopic());
 
             if (topic.getImageUri() != null && !topic.getImageUri().isEmpty()) {
-                showImage(topic.getImageUri());
             }
         }
 
@@ -142,16 +139,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.DealViewHold
             v.getContext().startActivity(intent);
         }
 
-        private void showImage(String url) {
-            if (url != null && !url.isEmpty()) {
-                Log.d("Image: ", url);
-                int width = Resources.getSystem().getDisplayMetrics().widthPixels;
-                Picasso.with(ivImageTopic.getContext())
-                        .load(url)
-                        .resize(120,120)
-                        .centerCrop()
-                        .into(ivImageTopic);
-            }
+
         }
-    }
+
 }
