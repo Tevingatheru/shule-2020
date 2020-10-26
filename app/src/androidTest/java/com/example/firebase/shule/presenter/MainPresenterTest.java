@@ -1,40 +1,44 @@
 package com.example.firebase.shule.presenter;
 
-import androidx.test.ext.junit.rules.ActivityScenarioRule;
-
-import com.example.firebase.shule.activity.MainActivity;
 import com.example.firebase.shule.contract.MainContract;
 
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import static org.mockito.Mockito.verify;
+import static org.mockito.MockitoAnnotations.openMocks;
 
 /**
  * Unit test for the main presenter
  * @author tevin
  */
 @RunWith(MockitoJUnitRunner.class)
-class MainPresenterTest {
-    @Rule
-    public ActivityScenarioRule<MainActivity> activityRule =
-            new ActivityScenarioRule<MainActivity>(MainActivity.class);
+public class MainPresenterTest {
 
     @Mock
     private MainContract.View view;
 
+    private MainPresenter presenter;
+
+
     @Before
-    void setUp() {
-
+    public void setUp() {
+        openMocks(this);
+        presenter = new MainPresenter(view);
     }
 
     @Test
-    void sayHello() {
+    public void shouldSayHello() {
+        presenter.sayHello();
+        verify(view).shouldSayHello();
     }
 
     @Test
-    void startSubjectActivity() {
+    public void shouldStartSubjectActivity() {
+        presenter.startSubjectActivity();
+        verify(view).shouldStartSubjectActivity();
     }
 }

@@ -20,7 +20,7 @@ public class TopicPresenter implements TopicContract.Presenter {
     }
 
     @Override
-    public void startTopicActivity() {
+    public void startExamActivity() {
 
     }
 }

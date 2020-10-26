@@ -10,6 +10,6 @@ public interface TopicContract {
     interface Presenter {
         void openReference();
         void setView();
-        void startTopicActivity();
+        void startExamActivity();
     }
 }

@@ -11,7 +11,7 @@ MERGED from [me.zhanghai.android.materialprogressbar:library:1.6.1] C:\Users\tev
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\85617a0bd0c144064dce7eaf3664b2d0\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\f6f08cf83d7e94d3a5a6ca4821470c9e\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-analytics:17.6.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\3a9604fe19215ded65fa72c98dd4be30\firebase-analytics-17.6.0\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.firebase:firebase-storage:19.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:15:1-39:12
 MERGED from [com.twitter.sdk.android:twitter-core:3.0.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\37dde63cd33492b0a63c052db8672967\jetified-twitter-core-3.0.0\AndroidManifest.xml:18:1-35:12
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\8eadc3067105f1c75c71f3a2d005aded\jetified-picasso-2.71828\AndroidManifest.xml:2:1-14:12
@@ -104,8 +104,8 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.2] C:\Users\tevin\.g
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.2] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\1fb9e56b605b6945062db28818eec327\constraintlayout-2.0.2\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-analytics:17.6.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\3a9604fe19215ded65fa72c98dd4be30\firebase-analytics-17.6.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-analytics:17.6.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\3a9604fe19215ded65fa72c98dd4be30\firebase-analytics-17.6.0\AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:28:5-36:19
-MERGED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:28:5-36:19
 MERGED from [com.google.firebase:firebase-storage:19.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:29:5-37:19
 MERGED from [com.google.firebase:firebase-storage:19.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:29:5-37:19
 MERGED from [com.twitter.sdk.android:twitter-core:3.0.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\37dde63cd33492b0a63c052db8672967\jetified-twitter-core-3.0.0\AndroidManifest.xml:27:5-33:19
@@ -232,8 +232,8 @@ MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\tevin\.gradle\cac
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\f6f08cf83d7e94d3a5a6ca4821470c9e\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-analytics:17.6.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\3a9604fe19215ded65fa72c98dd4be30\firebase-analytics-17.6.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics:17.6.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\3a9604fe19215ded65fa72c98dd4be30\firebase-analytics-17.6.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-storage:19.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-storage:19.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.twitter.sdk.android:twitter-core:3.0.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\37dde63cd33492b0a63c052db8672967\jetified-twitter-core-3.0.0\AndroidManifest.xml:23:5-44
@@ -376,8 +376,8 @@ INJECTED from D:\project\shule\app\src\main\AndroidManifest.xml
 		INJECTED from D:\project\shule\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.firebaseui:firebase-ui-auth:6.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\3e922105737f81c418b9913504dfc6ee\jetified-firebase-ui-auth-6.2.0\AndroidManifest.xml:12:5-79
-MERGED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:25:5-79
-MERGED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:25:5-79
 MERGED from [com.google.firebase:firebase-storage:19.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-storage:19.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:26:5-79
 MERGED from [com.google.android.gms:play-services-measurement:17.6.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\fc64ca1587327038fd3b6ec25ef15cdb\play-services-measurement-17.6.0\AndroidManifest.xml:24:5-79
@@ -394,8 +394,8 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.6.0] C:
 		ADDED from [com.firebaseui:firebase-ui-auth:6.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\3e922105737f81c418b9913504dfc6ee\jetified-firebase-ui-auth-6.2.0\AndroidManifest.xml:12:22-76
 uses-permission#android.permission.INTERNET
 ADDED from [com.firebaseui:firebase-ui-auth:6.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\3e922105737f81c418b9913504dfc6ee\jetified-firebase-ui-auth-6.2.0\AndroidManifest.xml:13:5-67
-MERGED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:26:5-67
-MERGED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:26:5-67
+MERGED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:26:5-67
+MERGED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:26:5-67
 MERGED from [com.google.firebase:firebase-storage:19.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:27:5-67
 MERGED from [com.google.firebase:firebase-storage:19.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:27:5-67
 MERGED from [com.twitter.sdk.android:twitter-core:3.0.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\37dde63cd33492b0a63c052db8672967\jetified-twitter-core-3.0.0\AndroidManifest.xml:25:5-67
@@ -593,7 +593,7 @@ ADDED from [com.firebaseui:firebase-ui-auth:6.2.0] C:\Users\tevin\.gradle\caches
 	android:name
 		ADDED from [com.firebaseui:firebase-ui-auth:6.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\3e922105737f81c418b9913504dfc6ee\jetified-firebase-ui-auth-6.2.0\AndroidManifest.xml:103:13-79
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:29:9-35:19
+ADDED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.firebase:firebase-storage:19.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:30:9-36:19
 MERGED from [com.google.firebase:firebase-storage:19.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:30:9-36:19
 MERGED from [com.google.firebase:firebase-auth:19.4.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\2570f9a98ad7c8da17bc1bac372c0fb9\jetified-firebase-auth-19.4.0\AndroidManifest.xml:33:9-39:19
@@ -605,19 +605,19 @@ MERGED from [com.google.firebase:firebase-installations:16.3.2] C:\Users\tevin\.
 MERGED from [com.google.firebase:firebase-common:19.3.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\b0490454e848f18b90eb9fd352d0729e\firebase-common-19.3.1\AndroidManifest.xml:33:9-37:35
 MERGED from [com.google.firebase:firebase-common:19.3.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\b0490454e848f18b90eb9fd352d0729e\firebase-common-19.3.1\AndroidManifest.xml:33:9-37:35
 	android:exported
-		ADDED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:31:13-37
+		ADDED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:31:13-37
 	tools:targetApi
 		ADDED from [com.google.firebase:firebase-common:19.3.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\b0490454e848f18b90eb9fd352d0729e\firebase-common-19.3.1\AndroidManifest.xml:37:13-32
 	android:directBootAware
 		ADDED from [com.google.firebase:firebase-common:19.3.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\b0490454e848f18b90eb9fd352d0729e\firebase-common-19.3.1\AndroidManifest.xml:35:13-43
 	android:name
-		ADDED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:30:13-84
+		ADDED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:30:13-84
 meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
-ADDED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:32:13-34:85
+ADDED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:32:13-34:85
 	android:value
-		ADDED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:34:17-82
+		ADDED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:34:17-82
 	android:name
-		ADDED from [com.google.firebase:firebase-database:19.5.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\15509b0ee2b49b430de04ac666b23e82\firebase-database-19.5.0\AndroidManifest.xml:33:17-109
+		ADDED from [com.google.firebase:firebase-database:19.5.1] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:33:17-109
 meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
 ADDED from [com.google.firebase:firebase-storage:19.2.0] C:\Users\tevin\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:33:13-35:85
 	android:value
