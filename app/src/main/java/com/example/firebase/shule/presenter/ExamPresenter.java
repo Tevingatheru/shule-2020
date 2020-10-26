@@ -11,18 +11,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Set;
 
 public class ExamPresenter  implements ExamContract.Presenter {
-    public static DatabaseReference databaseReference;
-    private static FirebaseDatabase firebaseDatabase;
 
     @Override
-    public void getExam() {
+    public void addExam() {
 
-    }
-
-    @Override
-    public void addExam(String topic, String imageUri, String imageName, Question Question, Set<Answer> answers) {
-        Exam exam = new Exam(topic, imageUri, imageName, Question, answers);
-        databaseReference.push().setValue(topic);
     }
 
     @Override
@@ -36,9 +28,7 @@ public class ExamPresenter  implements ExamContract.Presenter {
     }
 
     @Override
-    public void listenToFb() {
-        FirebaseUtil.openFbReference("exam");
-        firebaseDatabase = FirebaseUtil.firebaseDatabase;
-        databaseReference = FirebaseUtil.databaseReference;
+    public void openReference() {
+
     }
 }

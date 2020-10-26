@@ -23,14 +23,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.firebase.shule.activity.SubjectActivity" />
         <activity
             android:name="com.example.firebase.shule.activity.TopicActivity"
             android:label="List" />
         <activity
-            android:name="com.example.firebase.shule.activity.ExamActivity"
+            android:name="com.example.firebase.shule.activity.ExamHandleActivity"
             android:label="@string/Insert_label" />
         <activity android:name="com.example.firebase.shule.activity.MainActivity" >
             <intent-filter>

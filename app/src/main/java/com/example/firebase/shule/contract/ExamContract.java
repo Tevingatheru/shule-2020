@@ -7,15 +7,16 @@ import java.util.Set;
 
 public interface ExamContract {
     interface View {
-        void afterAddExam();
-        void removeExam();
-        void editExam();
+        void shouldAddExam();
+        void shouldRemoveExam();
+        void shouldEditExam();
+        void shouldOpenReference();
     }
 
     interface Presenter {
-        void addExam(String topic, String imageUri, String imageName, Question Question, Set<Answer> answers);
+        void addExam();
         void removeExam();
         void editExam();
-        void listenToFb();
+        void openReference();
     }
 }
