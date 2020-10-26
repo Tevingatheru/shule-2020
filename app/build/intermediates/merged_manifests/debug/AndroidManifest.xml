@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.firebase.basics"
+    package="com.example.firebase.shule"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -23,14 +23,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.firebase.shule.activity.SubjectActivity" />
         <activity
             android:name="com.example.firebase.shule.activity.TopicActivity"
-            android:label="List" >
-        </activity>
+            android:label="List" />
         <activity
-            android:name="com.example.firebase.shule.activity.AnswerActivity"
-            android:label="@string/Insert_label" >
-        </activity>
+            android:name="com.example.firebase.shule.activity.ExamActivity"
+            android:label="@string/Insert_label" />
         <activity android:name="com.example.firebase.shule.activity.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -125,7 +124,7 @@
 
         <provider
             android:name="com.firebase.ui.auth.data.client.AuthUiInitProvider"
-            android:authorities="com.example.firebase.basics.authuiinitprovider"
+            android:authorities="com.example.firebase.shule.authuiinitprovider"
             android:exported="false"
             android:initOrder="90" />
 
@@ -181,7 +180,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.example.firebase.basics.firebaseinitprovider"
+            android:authorities="com.example.firebase.shule.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
@@ -207,7 +206,7 @@
 
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-            android:authorities="com.example.firebase.basics.lifecycle-process"
+            android:authorities="com.example.firebase.shule.lifecycle-process"
             android:exported="false"
             android:multiprocess="true" />
     </application>

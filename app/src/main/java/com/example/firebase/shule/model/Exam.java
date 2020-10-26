@@ -12,7 +12,7 @@ public class Exam extends Topic {
     }
 
     public Exam(String topic, String imageUri, String imageName, Question question, Set<Answer> answer) {
-        super(topic, imageUri, imageName);
+        super();
         this.question = question;
         this.answer = answer;
     }

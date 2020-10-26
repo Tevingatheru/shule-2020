@@ -162,28 +162,32 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\tevin\.gradle\
 		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:11:9-40
-activity#com.example.firebase.shule.activity.TopicActivity
-ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:12:9-15:20
-	android:label
-		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:14:13-33
+activity#com.example.firebase.shule.activity.SubjectActivity
+ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:12:9-71
 	android:name
-		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:13:13-77
-activity#com.example.firebase.shule.activity.AnswerActivity
-ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:16:9-19:20
+		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:12:19-59
+activity#com.example.firebase.shule.activity.TopicActivity
+ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:13:9-15:45
+	android:label
+		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:15:13-33
+	android:name
+		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:14:13-51
+activity#com.example.firebase.shule.activity.ExamActivity
+ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:16:9-18:61
 	android:label
 		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:18:13-49
 	android:name
-		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:17:13-78
+		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:17:13-50
 activity#com.example.firebase.shule.activity.MainActivity
-ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:20:9-25:20
+ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:19:9-25:20
 	android:name
-		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:20:19-82
+		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:19:19-56
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:21:13-24:29
+ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
-ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:22:17-69
+ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:22:25-66
+		ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
 ADDED from D:\project\shule\app\src\main\AndroidManifest.xml:23:17-77
 	android:name

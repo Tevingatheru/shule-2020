@@ -6,7 +6,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.firebase.shule.activity.TopicActivity;
+import com.example.firebase.shule.activity.SubjectActivity;
 import com.example.firebase.shule.model.Answer;
 import com.example.firebase.shule.model.Question;
 import com.example.firebase.shule.model.Topic;
@@ -30,7 +30,7 @@ public class FirebaseUtil {
     private static FirebaseAuth.AuthStateListener authStateListener;
     private static FirebaseAuth firebaseAuth;
     private static FirebaseUtil firebaseUtil;
-    private static TopicActivity caller;
+    private static SubjectActivity caller;
     public static boolean isMember;
 
     public static FirebaseDatabase firebaseDatabase;
@@ -53,37 +53,31 @@ public class FirebaseUtil {
     public static void detachListener() {
         firebaseAuth.removeAuthStateListener(authStateListener);
     }
-
-    public static void openFbReference(String ref, final TopicActivity activity){
-        if (firebaseUtil == null) {
-            firebaseUtil = new FirebaseUtil();
-            firebaseDatabase = FirebaseDatabase.getInstance();
-            firebaseAuth = FirebaseAuth.getInstance();
-            caller = activity;
-
-            authStateListener = new FirebaseAuth.AuthStateListener() {
-                @Override
-                public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                    if(firebaseAuth.getCurrentUser() == null) {
-                        FirebaseUtil.signIn();
-                        Toast.makeText(caller.getBaseContext(), "Welcome", Toast.LENGTH_LONG).show();
-                    } else {
-                        String userId = firebaseAuth.getUid();
-                        checkMember(userId);
-                    }
+    private static FirebaseAuth.AuthStateListener checkAuth() {
+        return new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if(firebaseAuth.getCurrentUser() == null) {
+                    FirebaseUtil.signIn();
+                    Toast.makeText(caller.getBaseContext(), "Welcome", Toast.LENGTH_LONG).show();
+                } else {
+                    String userId = firebaseAuth.getUid();
+                    checkMember(userId);
                 }
-            };
-            connectStorage();
+            }
+        };
+    }
+
+    public static void openFbReference(String ref){
+        if (firebaseUtil == null) {
+            initializeFirebase();
+            caller = new SubjectActivity();
+            authStateListener = checkAuth();
+            connectTopicStorage();
         }
         initializeLists();
 
         databaseReference = firebaseDatabase.getReference().child(ref);
-    }
-
-    private static void initializeLists() {
-        topicUtilList = new ArrayList<Topic>();
-        questionUtilList = new ArrayList<Question>();
-        answerUtilList = new ArrayList<Answer>();
     }
 
     private static void checkMember(String userId) {
@@ -94,7 +88,6 @@ public class FirebaseUtil {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 FirebaseUtil.isMember = false;
                 Log.d("Member","Member Logged In: " + false);
-                caller.showMenu();
             }
 
             @Override
@@ -136,9 +129,27 @@ public class FirebaseUtil {
                 RC_SIGN_IN);
     }
 
-    public static void connectStorage() {
+    public static void connectTopicStorage() {
         firebaseStorage = FirebaseStorage.getInstance();
         topicPicture = firebaseStorage.getReference().child("topic_pictures");
+    }
+
+    public static void connectSubjectStorage() {
+        firebaseStorage = FirebaseStorage.getInstance();
         subjectPicture = firebaseStorage.getReference().child("subject_pictures");
+    }
+
+
+    private static void initializeFirebase() {
+        firebaseUtil = new FirebaseUtil();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+    }
+
+
+    private static void initializeLists() {
+        topicUtilList = new ArrayList<Topic>();
+        questionUtilList = new ArrayList<Question>();
+        answerUtilList = new ArrayList<Answer>();
     }
 }

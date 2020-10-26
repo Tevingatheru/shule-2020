@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "applicationId": "com.example.firebase.basics",
+  "applicationId": "com.example.firebase.shule",
   "variantType": "BASE_APK",
   "elements": [
     {
@@ -19,7 +19,7 @@
       },
       "path": "AndroidManifest.xml",
       "properties": {
-        "packageId": "com.example.firebase.basics",
+        "packageId": "com.example.firebase.shule",
         "split": "",
         "minSdkVersion": "28"
       }

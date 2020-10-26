@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/margin_standard"
-    tools:context=".activity.AnswerActivity">
+    tools:context=".activity.ExamActivity">
 
     <EditText
         android:id="@+id/txtTopic"

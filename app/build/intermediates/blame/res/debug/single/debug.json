@@ -12,20 +12,20 @@
         "source": "D:\\project\\shule\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_answer.xml.flat",
-        "source": "D:\\project\\shule\\app\\src\\main\\res\\layout\\activity_answer.xml"
+        "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "D:\\project\\shule\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
         "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\menu_activity_insert_menu.xml.flat",
         "source": "D:\\project\\shule\\app\\src\\main\\res\\menu\\activity_insert_menu.xml"
     },
     {
-        "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "D:\\project\\shule\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "D:\\project\\shule\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_subject.xml.flat",
+        "source": "D:\\project\\shule\\app\\src\\main\\res\\layout\\activity_subject.xml"
     },
     {
         "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
@@ -38,6 +38,10 @@
     {
         "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_topic.xml.flat",
         "source": "D:\\project\\shule\\app\\src\\main\\res\\layout\\activity_topic.xml"
+    },
+    {
+        "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_exam.xml.flat",
+        "source": "D:\\project\\shule\\app\\src\\main\\res\\layout\\activity_exam.xml"
     },
     {
         "merged": "D:\\project\\shule\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",

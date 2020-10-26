@@ -1,9 +1,12 @@
 package com.example.firebase.shule.model;
 
+import com.google.firebase.database.annotations.NotNull;
+
 import java.io.Serializable;
 
 public class Topic implements Serializable {
     private String id;
+    private String subjectId;
     private String topic;
     private String imageUri;
     private String imageName;
@@ -11,8 +14,9 @@ public class Topic implements Serializable {
     public Topic() {
     }
 
-    public Topic(String topic, String imageUri, String imageName) {
+    public Topic(@NotNull String subjectId,  String topic, String imageUri, String imageName) {
         this.id = id;
+        this.subjectId = subjectId;
         this.topic = topic;
         this.imageUri = imageUri;
         this.imageName = imageName;
@@ -49,4 +53,13 @@ public class Topic implements Serializable {
     public void setImageName(String imageName) {
         this.imageName = imageName;
     }
+
+    public String getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(String subjectId) {
+        this.subjectId = subjectId;
+    }
+
 }

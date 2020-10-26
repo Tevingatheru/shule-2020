@@ -1,4 +1,4 @@
-com.example.firebase.basics
+com.example.firebase.shule
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -2333,8 +2333,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_answer
+layout activity_exam
 layout activity_main
+layout activity_subject
 layout activity_topic
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row

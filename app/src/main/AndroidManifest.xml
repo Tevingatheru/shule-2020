@@ -9,17 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.SubjectActivity"></activity>
         <activity
-            android:name="com.example.firebase.shule.activity.TopicActivity"
-            android:label="List">
-        </activity>
+            android:name=".activity.TopicActivity"
+            android:label="List"></activity>
         <activity
-            android:name="com.example.firebase.shule.activity.AnswerActivity"
-            android:label="@string/Insert_label">
-        </activity>
-        <activity android:name="com.example.firebase.shule.activity.MainActivity">
+            android:name=".activity.ExamActivity"
+            android:label="@string/Insert_label"></activity>
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

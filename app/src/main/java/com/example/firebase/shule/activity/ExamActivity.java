@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.ArraySet;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,7 +23,6 @@ import com.example.firebase.shule.R;
 import com.example.firebase.shule.model.Answer;
 import com.example.firebase.shule.model.Exam;
 import com.example.firebase.shule.model.Question;
-import com.example.firebase.shule.model.Topic;
 import com.example.firebase.shule.util.FirebaseUtil;
 import com.example.firebase.shule.util.MenuUtil;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,47 +33,40 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
-public class AnswerActivity extends AppCompatActivity {
+public class ExamActivity extends AppCompatActivity {
     EditText etTopic;
     EditText etQuestion;
     EditText etOptionA;
     EditText etOptionB;
     EditText etOptionC;
     EditText etOptionD;
-    ImageView imageView;
 
     public static FirebaseDatabase firebaseDatabase;
     public static DatabaseReference databaseReference;
     public static final int PICTURE_RESULT = 42;
-    private Button btnImage;
     private Exam exam;
     private String uri;
     private Intent intent;
     private MenuUtil menuUtil;
     private String imageName;
     private Question question;
-    private Set<Answer> answer;
+    private Set<Answer> answers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_answer);
+        setContentView(R.layout.activity_exam);
 
         listenToFB();
         initializeContent();
 
-        btnImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/jpeg");
-                intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
-                startActivityForResult(intent.createChooser(intent, "Insert Picture"), PICTURE_RESULT);
-            }
-        });
+
     }
 
     @Override
@@ -82,30 +75,30 @@ public class AnswerActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.save_option:
                 if (exam.getId() == null) {
-                    saveDeal();
+                    saveExam();
                     Toast.makeText(this, "Deal Saved", Toast.LENGTH_LONG).show();
-                    clean();
+                    cleanView();
                 } else {
-                    editDeal();
+                    editExam();
                     Toast.makeText(this, "Deal Edited", Toast.LENGTH_LONG).show();
                 }
                 startListActivity();
                 return true;
 
             case R.id.delete_option:
-                deleteDeal();
+                deleteExam();
                 Toast.makeText(this, "Deal Deleted", Toast.LENGTH_LONG).show();
-                clean();
+                cleanView();
                 startListActivity();
                 return true;
 
             case R.id.view_deals_option:
-                clean();
+                cleanView();
                 startListActivity();
                 return true;
 
             case R.id.logout_option:
-                clean();
+                cleanView();
                 logout();
                 return true;
 
@@ -139,13 +132,13 @@ public class AnswerActivity extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     uri = taskSnapshot.getUploadSessionUri().toString();
                     imageName = taskSnapshot.getStorage().getPath();
-                    showImage(uri);
+
                 }
             });
         }
     }
 
-    private void clean() {
+    private void cleanView() {
         etTopic.setText("");
         etOptionA.setText("");
         etOptionB.setText("");
@@ -158,7 +151,8 @@ public class AnswerActivity extends AppCompatActivity {
         etTopic.requestFocus();
     }
 
-    private void saveDeal() {
+    private void saveExam() {
+
 
 //        topic = new Topic(etTopic.getText().toString(), uri, imageName);
 //        databaseReference.push().setValue(topic);
@@ -176,8 +170,8 @@ public class AnswerActivity extends AppCompatActivity {
         this.exam = (Exam) intent.getSerializableExtra("Deal");
         if(exam != null) {
             question = getQuestion();
-            answer = getAnswers();
-            exam = new Exam(question, answer);
+            answers = getAnswers();
+            exam = new Exam(question, answers);
         }
         setTravelDeal();
     }
@@ -191,7 +185,7 @@ public class AnswerActivity extends AppCompatActivity {
     }
 
     private void listenToFB() {
-        FirebaseUtil.openFbReference("traveldeals", new TopicActivity());
+        FirebaseUtil.openFbReference("exam");
         firebaseDatabase = FirebaseUtil.firebaseDatabase;
         databaseReference = FirebaseUtil.databaseReference;
     }
@@ -203,11 +197,11 @@ public class AnswerActivity extends AppCompatActivity {
     }
 
     private void startListActivity() {
-        Intent listIntent = new Intent(AnswerActivity.this, TopicActivity.class);
+        Intent listIntent = new Intent(ExamActivity.this, TopicActivity.class);
         startActivity(listIntent);
     }
 
-    private void deleteDeal() {
+    private void deleteExam() {
         if(exam.getId()==null) {
             Toast.makeText(this, "Deal does not exist", Toast.LENGTH_LONG).show();
             Log.d("Delete: ", "failed");
@@ -224,7 +218,7 @@ public class AnswerActivity extends AppCompatActivity {
         menuUtil.logoutOption(this);
     }
 
-    private void editDeal() {
+    private void editExam() {
         exam.setTopic(etTopic.getText().toString());
 
         exam.setImageUri(uri);
@@ -239,23 +233,12 @@ public class AnswerActivity extends AppCompatActivity {
     private void setTravelDeal() {
         Log.d("Deal: ", "Selected: "+ exam.getId());
 
-        etTopic.setText(exam.getTopic());
-        etQuestion.setText(exam.get());
-        etOptionA.setText(exam.getPrice());
-        showImage(uri);
+//        etTopic.setText(exam.getTopic());
+//        etQuestion.setText(exam.getQuestion().getQuestion());
+//        etOptionA.setText(exam.getAnswer());
     }
 
-    private void showImage(String url) {
-        if (url != null && !url.isEmpty()) {
-            Log.d("Image: ", url);
-            int width = Resources.getSystem().getDisplayMetrics().widthPixels;
-            Picasso.with(this)
-                    .load(url)
-                    .resize(width, width*2/3)
-                    .centerCrop()
-                    .into(imageView);
-        }
-    }
+
 
     private void deleteImage() {
         if (exam.getImageName() != null && !exam.getImageName().isEmpty()) {
