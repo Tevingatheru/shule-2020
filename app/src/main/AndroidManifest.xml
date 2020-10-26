@@ -9,13 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SubjectActivity"></activity>
+        <activity android:name=".activity.SubjectActivity"
+            >
+
+        </activity>
         <activity
             android:name=".activity.TopicActivity"
-            android:label="List"></activity>
+            android:label="List"
+            >
+
+        </activity>
         <activity
             android:name=".activity.ExamActivity"
-            android:label="@string/Insert_label"></activity>
+            android:label="@string/Insert_label"
+            >
+
+        </activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -23,13 +23,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.firebase.shule.activity.SubjectActivity" />
+        <activity android:name="com.example.firebase.shule.activity.SubjectActivity" >
+        </activity>
         <activity
             android:name="com.example.firebase.shule.activity.TopicActivity"
-            android:label="List" />
+            android:label="List" >
+        </activity>
         <activity
             android:name="com.example.firebase.shule.activity.ExamActivity"
-            android:label="@string/Insert_label" />
+            android:label="@string/Insert_label" >
+        </activity>
         <activity android:name="com.example.firebase.shule.activity.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -12,7 +12,6 @@ import com.example.firebase.shule.contract.TopicContract;
 
 public class TopicActivity extends AppCompatActivity implements TopicContract.View {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
