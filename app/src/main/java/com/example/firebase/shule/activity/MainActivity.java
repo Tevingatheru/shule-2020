@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent insertActivity = new Intent(MainActivity.this, TopicActivity.class);
+                Intent insertActivity = new Intent(MainActivity.this, SubjectActivity.class);
                 startActivity(insertActivity);            }
         }, 5000);
     }

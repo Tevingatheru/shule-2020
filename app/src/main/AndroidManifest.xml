@@ -10,18 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.SubjectActivity"
+            android:label="List Of Subjects"
             >
 
         </activity>
         <activity
             android:name=".activity.TopicActivity"
-            android:label="List"
+            android:label="List Of Topics"
             >
 
         </activity>
         <activity
             android:name=".activity.ExamActivity"
-            android:label="@string/Insert_label"
+            android:label="Exam"
             >
 
         </activity>
@@ -32,6 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <!-- You don't need to include android:required="false" if your app's
      minSdkVersion is 28 or higher. -->
         <uses-library android:name="android.test.runner"

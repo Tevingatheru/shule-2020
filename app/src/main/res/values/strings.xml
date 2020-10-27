@@ -4,7 +4,6 @@
     <string name="hello_world">Hello World</string>
     <string name="add_option">Add</string>
     <string name="edit_option">Edit</string>
-    <string name="Insert_label">Insert</string>
     <string name="delete_option">Delete</string>
     <string name="view_deals_option">View Deals</string>
     <string name="logout_option">Logout</string>

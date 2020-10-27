@@ -12,16 +12,16 @@ public class SubjectPresenter implements SubjectContract.Presenter {
 
     @Override
     public void openReference() {
-
+        view.shouldOpenReference();
     }
 
     @Override
     public void setView() {
-
+        view.shouldSetView();
     }
 
     @Override
     public void startTopicActivity() {
-
+//        view.shouldTopicActivity();
     }
 }

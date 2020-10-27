@@ -72,6 +72,7 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
             }
         };
         databaseReference.addChildEventListener(childEventListener);
+        Log.i("Subject Adapter: ", "Set On Child Listener");
     }
 
     @NonNull
@@ -84,7 +85,10 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
         } catch (RuntimeException e) {
             throw new RuntimeException("error.inflating.view", e);
         }
+        Log.i("Subject Adapter: ", "Create View");
+
         return new SubjectViewHolder(view);
+
     }
 
     @Override
@@ -98,7 +102,7 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
     @Override
     public int getItemCount() {
         int count = subjectSet.size();
-        Log.d("RecyclerView Count","Subject Count: " + count);
+        Log.d("Subject RecyclerView Count","Subject Count: " + count);
         return count;
     }
 
