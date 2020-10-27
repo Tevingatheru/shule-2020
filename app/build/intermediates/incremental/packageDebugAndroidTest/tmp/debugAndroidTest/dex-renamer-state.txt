@@ -1,4 +1,4 @@
-#Tue Oct 27 13:59:27 AST 2020
+#Tue Oct 27 14:07:00 AST 2020
 base.0=D\:\\project\\shule\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
