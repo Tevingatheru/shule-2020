@@ -12,3 +12,11 @@
 /captures
 .externalNativeBuild
 .cxx
+.json
+.iml
+local.property
+AndroidManifest.xml
+app\build\intermediates\.
+.idea\
+
+
