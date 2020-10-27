@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/row_image"
+        android:id="@+id/row_subject_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_standard"
@@ -16,14 +16,14 @@
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
-        android:id="@+id/row_topic"
+        android:id="@+id/row_subject_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_standard"
         android:layout_marginTop="@dimen/margin_standard"
         android:textSize="50sp"
 
-        app:layout_constraintStart_toEndOf="@+id/row_image"
+        app:layout_constraintStart_toEndOf="@+id/row_subject_iv"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

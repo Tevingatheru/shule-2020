@@ -1,6 +1,7 @@
 package com.example.firebase.shule.presenter;
 
 import com.example.firebase.shule.contract.ExamContract;
+import com.example.firebase.shule.model.Exam;
 
 public class ExamPresenter  implements ExamContract.Presenter {
 
@@ -11,18 +12,19 @@ public class ExamPresenter  implements ExamContract.Presenter {
     }
 
     @Override
-    public void addExam() {
+    public Exam addExam() {
+        return null;
+    }
+
+    @Override
+    public Exam removeExam() {
+        return null;
 
     }
 
     @Override
-    public void removeExam() {
-
-    }
-
-    @Override
-    public void editExam() {
-
+    public Exam editExam() {
+        return null;
     }
 
     @Override

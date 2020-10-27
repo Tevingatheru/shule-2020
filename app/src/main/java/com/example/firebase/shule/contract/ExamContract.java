@@ -1,9 +1,6 @@
 package com.example.firebase.shule.contract;
 
-import com.example.firebase.shule.model.Answer;
-import com.example.firebase.shule.model.Question;
-
-import java.util.Set;
+import com.example.firebase.shule.model.Exam;
 
 public interface ExamContract {
     interface View {
@@ -14,9 +11,9 @@ public interface ExamContract {
     }
 
     interface Presenter {
-        void addExam();
-        void removeExam();
-        void editExam();
+        Exam addExam();
+        Exam removeExam();
+        Exam editExam();
         void openReference();
     }
 }

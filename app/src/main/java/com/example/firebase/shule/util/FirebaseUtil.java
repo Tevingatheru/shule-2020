@@ -1,14 +1,16 @@
 package com.example.firebase.shule.util;
 
+import android.util.ArraySet;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.firebase.shule.activity.SubjectActivity;
+import com.example.firebase.shule.activity.MainActivity;
 import com.example.firebase.shule.model.Answer;
 import com.example.firebase.shule.model.Question;
+import com.example.firebase.shule.model.Subject;
 import com.example.firebase.shule.model.Topic;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,7 +22,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,18 +31,19 @@ public class FirebaseUtil {
     private static FirebaseAuth.AuthStateListener authStateListener;
     private static FirebaseAuth firebaseAuth;
     private static FirebaseUtil firebaseUtil;
-    private static SubjectActivity caller;
+    private static MainActivity caller;
     public static boolean isMember;
 
     public static FirebaseDatabase firebaseDatabase;
     public static DatabaseReference databaseReference;
-    public static ArrayList<Topic> topicUtilList;
-    public static ArrayList<Question> questionUtilList;
-    public static ArrayList<Answer> answerUtilList;
+    public static ArraySet<Topic> topicUtilList;
+    public static ArraySet<Question> questionUtilList;
+    public static ArraySet<Answer> answerUtilList;
+    public static ArraySet<Subject> subjectUtilList;
 
     public static FirebaseStorage firebaseStorage;
     public static StorageReference topicPicture;
-    private static StorageReference subjectPicture;
+    public static StorageReference subjectPicture;
 
     private FirebaseUtil () {
     };
@@ -53,6 +55,7 @@ public class FirebaseUtil {
     public static void detachListener() {
         firebaseAuth.removeAuthStateListener(authStateListener);
     }
+
     private static FirebaseAuth.AuthStateListener checkAuth() {
         return new FirebaseAuth.AuthStateListener() {
             @Override
@@ -71,12 +74,11 @@ public class FirebaseUtil {
     public static void openFbReference(String ref){
         if (firebaseUtil == null) {
             initializeFirebase();
-            caller = new SubjectActivity();
+            caller = new MainActivity();
             authStateListener = checkAuth();
             connectTopicStorage();
         }
         initializeLists();
-
         databaseReference = firebaseDatabase.getReference().child(ref);
     }
 
@@ -139,17 +141,16 @@ public class FirebaseUtil {
         subjectPicture = firebaseStorage.getReference().child("subject_pictures");
     }
 
-
     private static void initializeFirebase() {
         firebaseUtil = new FirebaseUtil();
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
     }
 
-
     private static void initializeLists() {
-        topicUtilList = new ArrayList<Topic>();
-        questionUtilList = new ArrayList<Question>();
-        answerUtilList = new ArrayList<Answer>();
+        topicUtilList = new ArraySet<Topic>();
+        questionUtilList = new ArraySet<Question>();
+        answerUtilList = new ArraySet<Answer>();
+        subjectUtilList = new ArraySet<Subject>();
     }
 }
