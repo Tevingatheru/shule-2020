@@ -1,7 +1,7 @@
-#Tue Oct 27 14:07:00 AST 2020
-base.0=D\:\\project\\shule\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+#Tue Oct 27 21:56:13 EAT 2020
+base.0=C\:\\Users\\User\\Documents\\GitHub\\shule\\shule\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=D\:\\project\\shule\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
+base.1=C\:\\Users\\User\\Documents\\GitHub\\shule\\shule\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
