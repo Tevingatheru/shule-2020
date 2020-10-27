@@ -17,6 +17,7 @@
 local.property
 AndroidManifest.xml
 app\build\intermediates\.
-.idea\
-
+.idea
+.idea/
+gradle.xml
 
