@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_standard"
         android:layout_marginTop="@dimen/margin_standard"
-        android:textSize="50sp"
+        android:textSize="34sp"
 
         app:layout_constraintStart_toEndOf="@+id/row_topic_iv"
         app:layout_constraintTop_toTopOf="parent" />

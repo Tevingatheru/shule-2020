@@ -9,11 +9,10 @@
         android:id="@+id/row_subject_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_standard"
         android:contentDescription="@string/image_of_subject"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        />
 
     <TextView
         android:id="@+id/row_subject_tv"
@@ -21,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_standard"
         android:layout_marginTop="@dimen/margin_standard"
-        android:textSize="50sp"
+        android:textSize="34sp"
 
         app:layout_constraintStart_toEndOf="@+id/row_subject_iv"
         app:layout_constraintTop_toTopOf="parent" />

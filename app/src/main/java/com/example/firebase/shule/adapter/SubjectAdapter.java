@@ -1,6 +1,5 @@
 package com.example.firebase.shule.adapter;
 
-import android.content.res.Resources;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -88,7 +88,6 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
         Log.i("Subject Adapter: ", "Create View");
 
         return new SubjectViewHolder(view);
-
     }
 
     @Override
@@ -109,7 +108,6 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
     private void listenToFb() {
         firebaseDatabase = FirebaseUtil.firebaseDatabase;
         databaseReference = FirebaseUtil.databaseReference;
-
         subjectSet = FirebaseUtil.subjectUtilList;
     }
 
@@ -136,13 +134,13 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
         }
 
         private void showImage(String imageUri) {
+            File fileUri = new File(imageUri);
             if (imageUri != null && !imageUri.isEmpty()) {
                 Log.d("Image: ", imageUri);
-                int width = Resources.getSystem().getDisplayMetrics().widthPixels;
                 Picasso.get()
-                        .load(imageUri)
-                        .resize(120,120)
-                        .centerCrop()
+                        .load(fileUri)
+//                        .resize(100,100)
+//                        .centerCrop()
                         .into(ivImageSubject);
             }
         }

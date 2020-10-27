@@ -1,6 +1,5 @@
 package com.example.firebase.shule.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,11 +26,12 @@ public class SubjectActivity extends AppCompatActivity implements SubjectContrac
 
     @Override
     public void shouldOpenReference() {
-        FirebaseUtil.openFbReference("subject");
+        FirebaseUtil.openFbReference("subject", this);
     }
 
     @Override
     public void shouldSetView() {
+//        FirebaseUtil.openFbReference("subject", this);
         final SubjectAdapter adapter = new SubjectAdapter();
         final LinearLayoutManager linearLayoutManager =
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -42,8 +42,7 @@ public class SubjectActivity extends AppCompatActivity implements SubjectContrac
 
     @Override
     public void shouldTopicActivity() {
-        Intent intent = new Intent(this, TopicActivity.class);
-        startActivity(intent);
+
     }
 
     @Override
@@ -55,14 +54,7 @@ public class SubjectActivity extends AppCompatActivity implements SubjectContrac
     @Override
     protected void onResume() {
         super.onResume();
-
-        final SubjectAdapter adapter = new SubjectAdapter();
-        final LinearLayoutManager linearLayoutManager =
-                new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rvSubjectList);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(adapter);
-
+        presenter.setView();
         FirebaseUtil.attachListener();
     }
 }

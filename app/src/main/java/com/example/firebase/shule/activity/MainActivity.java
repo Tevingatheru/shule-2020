@@ -31,13 +31,15 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void shouldStartSubjectActivity() {
+        Intent insertActivity = new Intent(MainActivity.this, SubjectActivity.class);
+
         handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent insertActivity = new Intent(MainActivity.this, SubjectActivity.class);
-                startActivity(insertActivity);            }
-        }, 5000);
+                startActivity(insertActivity);
+            }
+        }, 2000);
     }
 
     @Override

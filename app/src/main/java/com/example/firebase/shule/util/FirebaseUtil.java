@@ -7,7 +7,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.firebase.shule.activity.MainActivity;
+import com.example.firebase.shule.activity.SubjectActivity;
 import com.example.firebase.shule.model.Answer;
 import com.example.firebase.shule.model.Question;
 import com.example.firebase.shule.model.Subject;
@@ -31,7 +31,7 @@ public class FirebaseUtil {
     private static FirebaseAuth.AuthStateListener authStateListener;
     private static FirebaseAuth firebaseAuth;
     private static FirebaseUtil firebaseUtil;
-    private static MainActivity caller;
+    private static SubjectActivity caller;
     public static boolean isMember;
 
     public static FirebaseDatabase firebaseDatabase;
@@ -71,12 +71,13 @@ public class FirebaseUtil {
         };
     }
 
-    public static void openFbReference(String ref){
+    public static void openFbReference(String ref, final SubjectActivity activity){
         if (firebaseUtil == null) {
             initializeFirebase();
-            caller = new MainActivity();
+            caller = activity;
             authStateListener = checkAuth();
             connectTopicStorage();
+            connectSubjectStorage();
         }
         initializeLists();
         databaseReference = firebaseDatabase.getReference().child(ref);
@@ -129,6 +130,7 @@ public class FirebaseUtil {
                         .setAvailableProviders(providers)
                         .build(),
                 RC_SIGN_IN);
+
     }
 
     public static void connectTopicStorage() {
