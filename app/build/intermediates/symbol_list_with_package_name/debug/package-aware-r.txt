@@ -2524,10 +2524,8 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
-string currency
 string default_web_client_id
 string delete_option
-string description_hint
 string edit_option
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
@@ -2639,7 +2637,8 @@ string google_storage_bucket
 string hello_world
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
-string image_deals
+string image_of_subject
+string image_of_topic
 string item_view_role_description
 string logout_option
 string material_clock_display_divider
@@ -2699,13 +2698,11 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
-string price_hint
 string project_id
 string question
 string save
 string search_menu_title
 string status_bar_notification_info_overflow
-string title_hint
 string topic
 string tw__login_btn_txt
 string view_deals_option
