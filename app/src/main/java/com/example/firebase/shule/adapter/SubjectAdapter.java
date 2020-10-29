@@ -148,8 +148,6 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
                 Log.d("Image: ", imageUri);
                 Picasso.get()
                         .load(fileUri)
-                        .resize(120,120)
-                        .centerCrop()
                         .into(ivImageSubject);
             }
         }

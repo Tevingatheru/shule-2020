@@ -20,3 +20,5 @@ app\build\intermediates\.
 .idea
 .idea/
 gradle.xml
+app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex
+app/build/intermediates/javac/debug/classes/com/example/firebase/shule/adapter/SubjectAdapter$SubjectViewHolder.class
