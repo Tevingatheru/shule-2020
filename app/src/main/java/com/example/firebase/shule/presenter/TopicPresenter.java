@@ -16,7 +16,7 @@ public class TopicPresenter implements TopicContract.Presenter {
 
 
     @Override
-    public void setView() {
-        view.shouldSetView();
+    public void setView() { view.shouldSetView();
     }
+
 }

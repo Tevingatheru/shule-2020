@@ -116,6 +116,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
         @Override
         public void onClick(View v) {
 
+
         }
 
         public void bind (Topic topic) {
