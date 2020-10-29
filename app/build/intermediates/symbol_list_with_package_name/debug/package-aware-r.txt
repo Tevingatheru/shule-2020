@@ -2007,6 +2007,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id incoming
 id info
 id invisible
@@ -2130,6 +2131,7 @@ id right_icon
 id right_side
 id root
 id rounded
+id row_Option
 id row_index_key
 id row_subject_iv
 id row_subject_tv
@@ -2247,6 +2249,11 @@ id transition_transform
 id triangle
 id trouble_signing_in
 id trouble_signing_in_possible_fixes
+id tvOptionA
+id tvOptionB
+id tvOptionC
+id tvOptionD
+id tvQuestion
 id tw__spinner
 id tw__web_view
 id txtOption_a
@@ -2336,10 +2343,12 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_answer
 layout activity_exam
 layout activity_main
 layout activity_subject
 layout activity_topic
+layout answer_rv_row
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog

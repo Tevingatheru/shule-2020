@@ -31,7 +31,6 @@ public class SubjectActivity extends AppCompatActivity implements SubjectContrac
 
     @Override
     public void shouldSetView() {
-//        FirebaseUtil.openFbReference("subject", this);
         final SubjectAdapter adapter = new SubjectAdapter();
         final LinearLayoutManager linearLayoutManager =
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);

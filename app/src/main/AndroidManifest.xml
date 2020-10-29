@@ -9,23 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SubjectActivity"
-            android:label="List Of Subjects"
-            >
-
-        </activity>
+        <activity android:name=".activity.AnswerActivity"></activity>
+        <activity
+            android:name=".activity.SubjectActivity"
+            android:label="List Of Subjects"></activity>
         <activity
             android:name=".activity.TopicActivity"
-            android:label="List Of Topics"
-            >
-
-        </activity>
+            android:label="List Of Topics"></activity>
         <activity
             android:name=".activity.ExamActivity"
-            android:label="Exam"
-            >
-
-        </activity>
+            android:label="Exam"></activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,19 +26,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- You don't need to include android:required="false" if your app's
-     minSdkVersion is 28 or higher. -->
-        <uses-library android:name="android.test.runner"
+        <!--
+ You don't need to include android:required="false" if your app's
+     minSdkVersion is 28 or higher.
+        -->
+        <uses-library
+            android:name="android.test.runner"
             android:required="false" />
-        <!-- For both of these declarations, you don't need to include
+        <!--
+ For both of these declarations, you don't need to include
              android:required="false" if your app's minSdkVersion is 28
-             or higher. -->
-        <uses-library android:name="android.test.base"
+             or higher.
+        -->
+        <uses-library
+            android:name="android.test.base"
             android:required="false" />
-        <uses-library android:name="android.test.mock"
+        <uses-library
+            android:name="android.test.mock"
             android:required="false" />
-
     </application>
 
 </manifest>

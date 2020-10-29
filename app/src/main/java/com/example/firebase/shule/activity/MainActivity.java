@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void shouldStartSubjectActivity() {
-        Intent insertActivity = new Intent(MainActivity.this, SubjectActivity.class);
+        Intent insertActivity = new Intent(MainActivity.this, AnswerActivity.class);
 
         handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void shouldSayHello() {
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                hello.setText("Welcome");
-            }
-        }, 2000);
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                hello.setText("Welcome");
+//            }
+//        }, 2000);
     }
 }

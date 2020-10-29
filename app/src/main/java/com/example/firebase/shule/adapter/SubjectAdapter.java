@@ -128,7 +128,7 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
-            Log.d("Position: ", "Positin Clicked is: " + position);
+            Log.d("Position: ", "Position Clicked is: " + position);
             Subject subject = subjectList.get(position);
             Intent intent = new Intent(v.getContext(), TopicActivity.class);
             intent.putExtra("Subject", subject);

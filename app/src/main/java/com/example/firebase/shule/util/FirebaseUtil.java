@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.firebase.shule.activity.SubjectActivity;
-import com.example.firebase.shule.model.Answer;
 import com.example.firebase.shule.model.Question;
 import com.example.firebase.shule.model.Subject;
 import com.example.firebase.shule.model.Topic;
@@ -38,7 +37,6 @@ public class FirebaseUtil {
     public static DatabaseReference databaseReference;
     public static ArraySet<Topic> topicUtilList;
     public static ArraySet<Question> questionUtilList;
-    public static ArraySet<Answer> answerUtilList;
     public static ArraySet<Subject> subjectUtilList;
 
     public static FirebaseStorage firebaseStorage;
@@ -69,6 +67,12 @@ public class FirebaseUtil {
                 }
             }
         };
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return super.toString();
     }
 
     public static void openFbReference(String ref, final SubjectActivity activity){
@@ -152,7 +156,6 @@ public class FirebaseUtil {
     private static void initializeLists() {
         topicUtilList = new ArraySet<Topic>();
         questionUtilList = new ArraySet<Question>();
-        answerUtilList = new ArraySet<Answer>();
         subjectUtilList = new ArraySet<Subject>();
     }
 }
