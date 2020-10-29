@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.firebase.shule.R;
 import com.example.firebase.shule.contract.TopicContract;
+import com.example.firebase.shule.util.FirebaseUtil;
 
 public class TopicActivity extends AppCompatActivity implements TopicContract.View {
 
@@ -39,16 +40,11 @@ public class TopicActivity extends AppCompatActivity implements TopicContract.Vi
 
     @Override
     public void shouldOpenReference() {
-
+        FirebaseUtil.openFbReference("topic");
     }
 
     @Override
     public void shouldSetView() {
-
-    }
-
-    @Override
-    public void shouldTopicActivity() {
 
     }
 }

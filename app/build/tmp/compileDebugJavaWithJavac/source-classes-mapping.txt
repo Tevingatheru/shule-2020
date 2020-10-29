@@ -31,6 +31,7 @@ com/example/firebase/shule/adapter/AnswerAdapter.java
  com.example.firebase.shule.adapter.AnswerAdapter$AnswerViewHolder
 com/example/firebase/shule/adapter/TopicAdapter.java
  com.example.firebase.shule.adapter.TopicAdapter
+ com.example.firebase.shule.adapter.TopicAdapter$1
  com.example.firebase.shule.adapter.TopicAdapter$TopicViewHolder
 com/example/firebase/shule/contract/TopicContract.java
  com.example.firebase.shule.contract.TopicContract
