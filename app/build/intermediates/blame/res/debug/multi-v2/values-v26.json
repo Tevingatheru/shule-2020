@@ -4,7 +4,7 @@
             "outputFile": "D:\\project\\shule\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\tevin\\.gradle\\caches\\transforms-2\\files-2.1\\3e922105737f81c418b9913504dfc6ee\\jetified-firebase-ui-auth-6.2.0\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\tevin\\.gradle\\caches\\transforms-2\\files-2.1\\4d9e6c1dfbef8cd6544846c0c116a085\\jetified-firebase-ui-auth-6.2.0\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,6,10,14",
                         "startColumns": "4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\tevin\\.gradle\\caches\\transforms-2\\files-2.1\\85617a0bd0c144064dce7eaf3664b2d0\\appcompat-1.2.0\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\tevin\\.gradle\\caches\\transforms-2\\files-2.1\\b0f78253426e641fb17cc514cc292ff6\\appcompat-1.2.0\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
