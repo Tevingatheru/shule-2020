@@ -8,13 +8,14 @@ android {
     useLibrary 'android.test.base'
     useLibrary 'android.test.mock'
 
-
     defaultConfig {
         applicationId 'com.example.firebase.shule'
         minSdkVersion 28
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+
+        multiDexEnabled true
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         testHandleProfiling true
