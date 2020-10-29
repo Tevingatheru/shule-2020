@@ -28,3 +28,4 @@ app/build/intermediates/res/merged/debug/*
 *.dex
 app/build/intermediates/project_dex_archive/debug/out/NoteKeeperDatabaseContract/questionInfoEntry/SQL_CREATE_TABLE.dex
 app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/+8MpRBZmGS6GF3RMcz+7+dIf+BY=
+gradle/wrapper/gradle-wrapper.properties
