@@ -4,13 +4,14 @@ import com.example.firebase.shule.model.Question;
 
 public interface QuestionContract {
     interface View{
-        void shouldSetView();
-        void shouldInitialize(Question question);
+        void shouldSetQuestion(Question question);
+        boolean shouldCheckIfAnswerSelectedIsCorrect();
+        void shouldListenToFb();
     }
 
     interface Presenter{
-        void initializeFields();
+        void setQuestion(Question question);
         boolean isAnswerCorrect();
-        void setView();
+        void listenToFb();
     }
 }

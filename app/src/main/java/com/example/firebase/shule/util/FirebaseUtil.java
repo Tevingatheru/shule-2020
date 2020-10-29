@@ -69,12 +69,6 @@ public class FirebaseUtil {
         };
     }
 
-    @NonNull
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
     public static void openFbReference(String ref, final SubjectActivity activity){
         if (firebaseUtil == null) {
             initializeFirebase();
@@ -84,6 +78,17 @@ public class FirebaseUtil {
             connectSubjectStorage();
         }
         initializeLists();
+        databaseReference = firebaseDatabase.getReference().child(ref);
+    }
+
+    public static void openQuestionReference(String ref, final SubjectActivity activity){
+        if (firebaseUtil == null) {
+            initializeFirebase();
+            caller = activity;
+            authStateListener = checkAuth();
+        }
+
+        questionUtilList = new ArraySet<Question>();
         databaseReference = firebaseDatabase.getReference().child(ref);
     }
 
@@ -134,7 +139,6 @@ public class FirebaseUtil {
                         .setAvailableProviders(providers)
                         .build(),
                 RC_SIGN_IN);
-
     }
 
     public static void connectTopicStorage() {
@@ -155,7 +159,6 @@ public class FirebaseUtil {
 
     private static void initializeLists() {
         topicUtilList = new ArraySet<Topic>();
-        questionUtilList = new ArraySet<Question>();
         subjectUtilList = new ArraySet<Subject>();
     }
 }
