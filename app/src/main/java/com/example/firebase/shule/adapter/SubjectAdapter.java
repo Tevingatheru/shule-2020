@@ -34,7 +34,6 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
     private ChildEventListener childEventListener;
     private static ArrayList<Subject> subjectList;
 
-
     public SubjectAdapter() {
         listenToFb();
         childEventListener = new ChildEventListener() {
