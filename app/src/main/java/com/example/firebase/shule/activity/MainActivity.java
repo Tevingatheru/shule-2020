@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.firebase.shule.R;
 import com.example.firebase.shule.contract.MainContract;
-import com.example.firebase.shule.model.Topic;
 import com.example.firebase.shule.presenter.MainPresenter;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void shouldStartSubjectActivity() {
-        Intent insertActivity = new Intent(MainActivity.this, Topic.class);
+        Intent insertActivity = new Intent(MainActivity.this, TopicActivity.class);
 
         handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -45,11 +44,11 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void shouldSayHello() {
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                hello.setText("Welcome");
-//            }
-//        }, 2000);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                hello.setText("Welcome");
+            }
+        }, 2000);
     }
 }

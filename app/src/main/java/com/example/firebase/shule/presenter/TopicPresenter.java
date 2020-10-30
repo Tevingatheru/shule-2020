@@ -11,12 +11,12 @@ public class TopicPresenter implements TopicContract.Presenter {
 
     @Override
     public void openReference() {
-
+        view.shouldOpenReference();
     }
 
     @Override
     public void setView() {
-
+        view.shouldSetView();
     }
 
     @Override

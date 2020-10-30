@@ -74,7 +74,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
             }
         };
         databaseReference.addChildEventListener(childEventListener);
-        Log.i("Subject Adapter: ", "Set On Child Listener");
+        Log.i("Topic Adapter: ", "Set On Child Listener");
     }
 
     @NonNull
@@ -116,8 +116,8 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
 
     public class TopicViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private final TextView tvTopic;
-        private ImageView ivImageTopic;
+        TextView tvTopic;
+        ImageView ivImageTopic;
 
         public TopicViewHolder(@NonNull View itemView) {
             super(itemView);

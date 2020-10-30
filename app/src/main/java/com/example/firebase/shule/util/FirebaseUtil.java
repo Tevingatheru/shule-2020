@@ -28,11 +28,11 @@ public class FirebaseUtil {
     private static final int RC_SIGN_IN = 123;
 
     private static FirebaseAuth.AuthStateListener authStateListener;
-    private static FirebaseAuth firebaseAuth;
     private static FirebaseUtil firebaseUtil;
     private static SubjectActivity caller;
     public static boolean isMember;
 
+    public static FirebaseAuth firebaseAuth;
     public static FirebaseDatabase firebaseDatabase;
     public static DatabaseReference databaseReference;
     public static ArraySet<Topic> topicUtilList;
@@ -74,7 +74,7 @@ public class FirebaseUtil {
             initializeFirebase();
             caller = activity;
             authStateListener = checkAuth();
-            connectTopicStorage();
+//            connectTopicStorage();
             connectSubjectStorage();
         }
         initializeLists();
@@ -87,7 +87,6 @@ public class FirebaseUtil {
             caller = activity;
             authStateListener = checkAuth();
         }
-
         questionUtilList = new ArraySet<Question>();
         databaseReference = firebaseDatabase.getReference().child(ref);
     }

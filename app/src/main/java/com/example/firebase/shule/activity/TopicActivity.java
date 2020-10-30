@@ -4,6 +4,7 @@ package com.example.firebase.shule.activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +15,7 @@ import com.example.firebase.shule.adapter.TopicAdapter;
 import com.example.firebase.shule.contract.TopicContract;
 import com.example.firebase.shule.presenter.TopicPresenter;
 import com.example.firebase.shule.util.FirebaseUtil;
+import com.example.firebase.shule.util.MenuUtil;
 
 public class TopicActivity extends AppCompatActivity implements TopicContract.View {
 
@@ -26,7 +28,6 @@ public class TopicActivity extends AppCompatActivity implements TopicContract.Vi
 
         presenter = new TopicPresenter(this);
         presenter.openReference();
-
     }
 
     @Override
@@ -58,12 +59,31 @@ public class TopicActivity extends AppCompatActivity implements TopicContract.Vi
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.logout_option:
+                logout();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void logout() {
+        MenuUtil menuUtil = new MenuUtil();
+        menuUtil.logoutOption(this);
+    }
+
+    @Override
     protected void onPause() {
         super.onPause();
+        FirebaseUtil.detachListener();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        presenter.setView();
+        FirebaseUtil.attachListener();
     }
 }

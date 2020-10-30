@@ -1850,7 +1850,6 @@ id activity_insert
 id activity_list
 id activity_main
 id add
-id add_option
 id adjust_height
 id adjust_width
 id alertTitle
