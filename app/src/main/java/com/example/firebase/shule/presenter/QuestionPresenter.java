@@ -38,4 +38,9 @@ public class QuestionPresenter implements QuestionContract.Presenter {
     public int countItems() {
         return view.shouldCountItems();
     }
+
+    @Override
+    public void openRef() {
+        view.shouldOpenRef();
+    }
 }

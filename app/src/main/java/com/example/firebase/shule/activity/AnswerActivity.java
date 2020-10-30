@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.firebase.shule.R;
@@ -19,7 +21,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class AnswerActivity extends AppCompatActivity implements QuestionContract.View {
     private TextView tvQuestion;
@@ -27,21 +28,23 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
     private TextView tvOptionB;
     private TextView tvOptionC;
     private TextView tvOptionD;
-    private QuestionPresenter presenter;
-    private  static ArraySet<Question> questionSet;
 
-    public static FirebaseDatabase firebaseDatabase;
-    public static DatabaseReference databaseReference;
-    public static Question question;
-    public static ChildEventListener childEventListener;
+    public QuestionPresenter presenter;
+    public ArraySet<Question> questionSet;
+
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private ChildEventListener childEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answer);
         presenter = new QuestionPresenter(this);
+        presenter.openRef();
+        presenter.listenToFb();
+
         presenter.initializeFields();
-        FirebaseUtil.openQuestionReference("question", new SubjectActivity());
     }
 
     @Override
@@ -51,7 +54,6 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
         tvOptionB = (TextView) findViewById(R.id.tvOptionB);
         tvOptionC = (TextView) findViewById(R.id.tvOptionC);
         tvOptionD = (TextView) findViewById(R.id.tvOptionD);
-        questionSet = new ArraySet<Question>();
 
         tvOptionA.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +101,11 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
     }
 
     @Override
+    public void shouldOpenRef() {
+        FirebaseUtil.openQuestionReference("question", new SubjectActivity());
+    }
+
+    @Override
     public void shouldSetQuestion() {
         if (questionSet != null && !questionSet.isEmpty()) {
 //            tvQuestion.setText(question.getQuestion());
@@ -117,40 +124,48 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
 
     @Override
     public void shouldListenToFb() {
-        if (questionSet.isEmpty()) {
-            databaseReference= FirebaseUtil.databaseReference;
-
-            ValueEventListener valueEventListener = new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot snapshot) {
-                    for (DataSnapshot postSnapshot : snapshot.getChildren()) {
-                        Question questionFb;
-                        Log.i("Answer", "onChildAdded:" + snapshot.getKey());
-
-                        try {
-                            questionFb = snapshot.getValue(Question.class);
-                            Log.i("Question: ","question found" + questionFb.getQuestion());
-                        } catch (RuntimeException e) {
-                            Log.e("Answer Adapter: ", e.getMessage());
-                            throw new RuntimeException(e.getMessage(), e);
-                        }
-
-                        assert questionFb != null;
-//                        Log.i("Answer Adapter: ", questionFb.getQuestion());
-                        questionFb.setId(snapshot.getKey());
-                        questionSet.add(questionFb);
-                    }
+        firebaseDatabase = FirebaseUtil.firebaseDatabase;
+        databaseReference = FirebaseUtil.databaseReference;
+        questionSet = FirebaseUtil.questionUtilList;
+        childEventListener = new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Question question;
+                try {
+                    question = snapshot.getValue(Question.class);
+                } catch (RuntimeException e) {
+                    Log.e("Question Adapter: ", e.getMessage());
+                    throw new RuntimeException(e.getMessage(), e);
                 }
 
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                    // Getting Post failed, log a message
-                    Log.w("Error", "loadPost:onCancelled", databaseError.toException());
-                    // ...
-                }
-            };
-            databaseReference.addValueEventListener(valueEventListener);
-        }
+                Log.i("Question Adapter: ", question.getQuestion());
+                question.setId(snapshot.getKey());
+                Log.i("Question", question.getId());
+                questionSet.add(question);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        };
+        databaseReference.addChildEventListener(childEventListener);
+        
     }
 
     @Override
@@ -162,7 +177,6 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
     @Override
     protected void onResume() {
         super.onResume();
-        presenter.listenToFb();
         int size = presenter.countItems();
         assert size > 0;
         for(int i = 0; i < size; i++) {
@@ -171,5 +185,4 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
         }
         FirebaseUtil.attachListener();
     }
-
 }

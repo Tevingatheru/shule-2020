@@ -7,6 +7,8 @@ public interface QuestionContract {
         void shouldListenToFb();
         void shouldInitializeFields();
         int shouldCountItems();
+        void shouldOpenRef();
+
     }
 
     interface Presenter{
@@ -15,5 +17,7 @@ public interface QuestionContract {
         void listenToFb();
         void initializeFields();
         int countItems();
+
+        void openRef();
     }
 }
