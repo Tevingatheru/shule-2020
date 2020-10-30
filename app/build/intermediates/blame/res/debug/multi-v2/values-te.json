@@ -4,6 +4,23 @@
             "outputFile": "D:\\project\\shule\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-te\\values-te.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\tevin\\.gradle\\caches\\transforms-2\\files-2.1\\2a38911dfcd618f6f10b3261ee4a7ed5\\jetified-play-services-basement-17.1.0\\res\\values-te\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "198",
+                        "endOffsets": "445"
+                    },
+                    "to": {
+                        "startLines": "45",
+                        "startColumns": "4",
+                        "startOffsets": "4550",
+                        "endColumns": "198",
+                        "endOffsets": "4744"
+                    }
+                },
+                {
                     "source": "C:\\Users\\tevin\\.gradle\\caches\\transforms-2\\files-2.1\\18b63455f7cdf2e55499d904fd0b4a4d\\jetified-play-services-base-17.1.0\\res\\values-te\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -54,23 +71,6 @@
                         "endLines": "5,33,34,35,36,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103",
                         "endColumns": "12,85,103,115,88,65,93,66,85,63,62,73,63,53,120,56,61,53,78,127,87,91,114,79,81,87,66,65,74,77,89,72,75,80,68,104,76,90,92,73,82,91,54,65,83,85,62,64,63,109,111,98,118,82",
                         "endOffsets": "276,3102,3206,3322,3411,6154,6248,6315,6401,6465,6528,6602,6666,6720,6841,6898,6960,7014,7093,7221,7309,7401,7516,7596,7678,7766,7833,7899,7974,8052,8142,8215,8291,8372,8441,8546,8623,8714,8807,8881,8964,9056,9111,9177,9261,9347,9410,9475,9539,9649,9761,9860,9979,10062"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\tevin\\.gradle\\caches\\transforms-2\\files-2.1\\9be9080bf55c5cd555c47162821f6695\\play-services-basement-17.0.0\\res\\values-te\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "198",
-                        "endOffsets": "445"
-                    },
-                    "to": {
-                        "startLines": "45",
-                        "startColumns": "4",
-                        "startOffsets": "4550",
-                        "endColumns": "198",
-                        "endOffsets": "4744"
                     }
                 },
                 {

@@ -44,3 +44,6 @@ ios/Flutter/Generated.xcconfig
 GeneratedPluginRegistrant.h
 GeneratedPluginRegistrant.m
 GeneratedPluginRegistrant.java
+/.idea/
+*.apk
+app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/Wh72FdrnHYzENqftH_6VLjcCgbk=

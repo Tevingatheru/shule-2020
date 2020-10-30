@@ -3,7 +3,9 @@ package com.example.firebase.shule.activity;
 import android.os.Bundle;
 import android.util.ArraySet;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,138 +23,134 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AnswerActivity extends AppCompatActivity implements QuestionContract.View {
     private TextView tvQuestion;
-    private QuestionPresenter presenter;
-    private static ArraySet<Question> questionSet;
-    private static FirebaseDatabase firebaseDatabase;
-    private static DatabaseReference databaseReference;
-    private static Question question;
-    private static ChildEventListener childEventListener;
     private TextView tvOptionA;
     private TextView tvOptionB;
     private TextView tvOptionC;
     private TextView tvOptionD;
+    private QuestionPresenter presenter;
+    private  static ArraySet<Question> questionSet;
+
+    public static FirebaseDatabase firebaseDatabase;
+    public static DatabaseReference databaseReference;
+    public static Question question;
+    public static ChildEventListener childEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answer);
         presenter = new QuestionPresenter(this);
-        presenter.listenToFb();
-        question = new Question("data question", "01","02","02","03","04");
-        questionSet.add(question);
-        presenter.setQuestion(question);
+        presenter.initializeFields();
+        FirebaseUtil.openQuestionReference("question", new SubjectActivity());
+    }
 
+    @Override
+    public void shouldInitializeFields() {
         tvQuestion = (TextView) findViewById(R.id.tvQuestion);
         tvOptionA = (TextView) findViewById(R.id.tvOptionA);
         tvOptionB = (TextView) findViewById(R.id.tvOptionB);
         tvOptionC = (TextView) findViewById(R.id.tvOptionC);
         tvOptionD = (TextView) findViewById(R.id.tvOptionD);
+        questionSet = new ArraySet<Question>();
+
+        tvOptionA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),
+                        "'Option A' button clicked", Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
+
+        tvOptionB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),
+                        "'Option B' button clicked", Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
+
+        tvOptionC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),
+                        "'Option C' button clicked", Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
+
+        tvOptionD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),
+                        "'Option D' button clicked", Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
     }
 
     @Override
-    public void shouldSetQuestion(Question question) {
-        //        databaseReference = FirebaseUtil.databaseReference;
-//        questionSet = new ArraySet<Question>();
-//
-//        childEventListener = new ChildEventListener() {
-//            @Override
-//            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//                Question questionFb;
-//                Log.d("Answer", "onChildAdded:" + snapshot.getKey());
-//
-//                try{
-//                    questionFb = snapshot.getValue(Question.class);
-//                } catch (RuntimeException e){
-//                    Log.e("Answer Adapter: ", e.getMessage());
-//                    throw new RuntimeException(e.getMessage(), e);
-//                }
-//
-//                Log.i("Answer Adapter: ", questionFb.getOptionC());
-//                questionFb.setId(snapshot.getKey());
-//                questionSet.add(questionFb);
-//            }
-//
-//            @Override
-//            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//
-//            }
-//
-//            @Override
-//            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        };
-//        databaseReference.addChildEventListener(childEventListener);
+    public int shouldCountItems() {
+        int size = questionSet.size();
+        Log.i("Question:", "question size is :" + size);
+        System.out.println(size);
+        return size;
+    }
 
-        databaseReference = FirebaseDatabase.getInstance()
-                .getReference()
-                .child("question");
-        // My top posts by number of stars
-        ValueEventListener valueEventListener = new ValueEventListener() {
-
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
-                    Question questionFb;
-                    Log.d("Answer", "onChildAdded:" + snapshot.getKey());
-
-                    try {
-                        questionFb = snapshot.getValue(Question.class);
-                    } catch (RuntimeException e) {
-                        Log.e("Answer Adapter: ", e.getMessage());
-                        throw new RuntimeException(e.getMessage(), e);
-                    }
-
-                    assert questionFb != null;
-                    Log.i("Answer Adapter: ", questionFb.getQuestion());
-                    questionFb.setId(snapshot.getKey());
-                    questionSet.add(questionFb);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w("Error", "loadPost:onCancelled", databaseError.toException());
-                // ...
-            }
-        };
-        databaseReference.addValueEventListener(valueEventListener);
-
+    @Override
+    public void shouldSetQuestion() {
         if (questionSet != null && !questionSet.isEmpty()) {
-            Log.i("Question:", "question size is :" + questionSet.size());
-            System.out.println(questionSet.size());
-            for(Question mQuestion :questionSet) {
-            }
+//            tvQuestion.setText(question.getQuestion());
+//            tvOptionA.setText(question.getOptionA());
+//            tvOptionB.setText(question.getOptionB());
+//            tvOptionC.setText(question.getOptionC());
+//            tvOptionD.setText(question.getOptionD());
         }
-
-
-        tvQuestion.setText(question.getQuestion());
-        tvOptionA.setText(question.getOptionA());
-        tvOptionB.setText(question.getOptionB());
-        tvOptionC.setText(question.getOptionC());
-        tvOptionD.setText(question.getOptionD());
     }
 
     @Override
     public boolean shouldCheckIfAnswerSelectedIsCorrect() {
+
         return false;
     }
 
     @Override
     public void shouldListenToFb() {
-        FirebaseUtil.openQuestionReference("question", new SubjectActivity());
+        if (questionSet.isEmpty()) {
+            databaseReference= FirebaseUtil.databaseReference;
 
+            ValueEventListener valueEventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot snapshot) {
+                    for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                        Question questionFb;
+                        Log.i("Answer", "onChildAdded:" + snapshot.getKey());
+
+                        try {
+                            questionFb = snapshot.getValue(Question.class);
+                            Log.i("Question: ","question found" + questionFb.getQuestion());
+                        } catch (RuntimeException e) {
+                            Log.e("Answer Adapter: ", e.getMessage());
+                            throw new RuntimeException(e.getMessage(), e);
+                        }
+
+                        assert questionFb != null;
+//                        Log.i("Answer Adapter: ", questionFb.getQuestion());
+                        questionFb.setId(snapshot.getKey());
+                        questionSet.add(questionFb);
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Getting Post failed, log a message
+                    Log.w("Error", "loadPost:onCancelled", databaseError.toException());
+                    // ...
+                }
+            };
+            databaseReference.addValueEventListener(valueEventListener);
+        }
     }
 
     @Override
@@ -164,6 +162,14 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
     @Override
     protected void onResume() {
         super.onResume();
+        presenter.listenToFb();
+        int size = presenter.countItems();
+        assert size > 0;
+        for(int i = 0; i < size; i++) {
+            presenter.setQuestion();
+            presenter.isAnswerCorrect();
+        }
         FirebaseUtil.attachListener();
     }
+
 }

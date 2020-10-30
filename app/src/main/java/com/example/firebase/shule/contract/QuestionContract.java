@@ -1,17 +1,19 @@
 package com.example.firebase.shule.contract;
 
-import com.example.firebase.shule.model.Question;
-
 public interface QuestionContract {
     interface View{
-        void shouldSetQuestion(Question question);
+        void shouldSetQuestion();
         boolean shouldCheckIfAnswerSelectedIsCorrect();
         void shouldListenToFb();
+        void shouldInitializeFields();
+        int shouldCountItems();
     }
 
     interface Presenter{
-        void setQuestion(Question question);
+        void setQuestion();
         boolean isAnswerCorrect();
         void listenToFb();
+        void initializeFields();
+        int countItems();
     }
 }

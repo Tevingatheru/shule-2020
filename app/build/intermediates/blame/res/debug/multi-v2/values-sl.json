@@ -4,6 +4,23 @@
             "outputFile": "D:\\project\\shule\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sl\\values-sl.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\tevin\\.gradle\\caches\\transforms-2\\files-2.1\\2a38911dfcd618f6f10b3261ee4a7ed5\\jetified-play-services-basement-17.1.0\\res\\values-sl\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "198",
+                        "endOffsets": "445"
+                    },
+                    "to": {
+                        "startLines": "53",
+                        "startColumns": "4",
+                        "startOffsets": "5228",
+                        "endColumns": "198",
+                        "endOffsets": "5422"
+                    }
+                },
+                {
                     "source": "C:\\Users\\tevin\\.gradle\\caches\\transforms-2\\files-2.1\\18b63455f7cdf2e55499d904fd0b4a4d\\jetified-play-services-base-17.1.0\\res\\values-sl\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -71,23 +88,6 @@
                         "startOffsets": "918,1030,1132,1240,1327,1430,1549,1630,1708,1800,1894,1989,2083,2178,2272,2368,2468,2560,2652,2736,2844,2952,3052,3165,3273,3381,3564,19723",
                         "endColumns": "111,101,107,86,102,118,80,77,91,93,94,93,94,93,95,99,91,91,83,107,107,99,112,107,107,182,99,83",
                         "endOffsets": "1025,1127,1235,1322,1425,1544,1625,1703,1795,1889,1984,2078,2173,2267,2363,2463,2555,2647,2731,2839,2947,3047,3160,3268,3376,3559,3659,19802"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\tevin\\.gradle\\caches\\transforms-2\\files-2.1\\9be9080bf55c5cd555c47162821f6695\\play-services-basement-17.0.0\\res\\values-sl\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "198",
-                        "endOffsets": "445"
-                    },
-                    "to": {
-                        "startLines": "53",
-                        "startColumns": "4",
-                        "startOffsets": "5228",
-                        "endColumns": "198",
-                        "endOffsets": "5422"
                     }
                 },
                 {
