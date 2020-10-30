@@ -74,7 +74,7 @@ public class FirebaseUtil {
             initializeFirebase();
             caller = activity;
             authStateListener = checkAuth();
-//            connectTopicStorage();
+            connectTopicStorage();
             connectSubjectStorage();
         }
         initializeLists();

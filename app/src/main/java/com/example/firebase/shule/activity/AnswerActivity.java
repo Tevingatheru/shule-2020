@@ -1,12 +1,6 @@
 package com.example.firebase.shule.activity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.ArraySet;
@@ -39,12 +33,11 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
     private TextView tvHint;
 
     public QuestionPresenter presenter;
-    public ArraySet<Question> questionSet;
+    public static ArraySet<Question> questionSet;
 
-    private FirebaseDatabase firebaseDatabase;
-    private DatabaseReference databaseReference;
-    private ChildEventListener childEventListener;
-    private Drawable colorDrawable;
+    private static FirebaseDatabase firebaseDatabase;
+    private static DatabaseReference databaseReference;
+    private static ChildEventListener childEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +49,7 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
         presenter.initializeFields();
 
         int size = presenter.countItems();
-        assert size > 0;
+        Log.i("Answer: ", "Size Of Question List" + size);
         for(Question mQuestion: questionSet) {
             presenter.setQuestion(mQuestion);
         }
@@ -70,28 +63,7 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
         tvOptionC = (TextView) findViewById(R.id.tvOptionC);
         tvOptionD = (TextView) findViewById(R.id.tvOptionD);
         tvHint = (TextView) findViewById(R.id.tvHint);
-
-        colorDrawable = new Drawable() {
-            @Override
-            public void draw(@NonNull Canvas canvas) {
-
-            }
-
-            @Override
-            public void setAlpha(int alpha) {
-
-            }
-
-            @Override
-            public void setColorFilter(@Nullable ColorFilter colorFilter) {
-
-            }
-
-            @Override
-            public int getOpacity() {
-                return 0;
-            }
-        };
+        tvHint.setVisibility(View.INVISIBLE);
 
         tvOptionA.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,7 +123,7 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
             tvOptionB.setText(mQuestion.getOptionB());
             tvOptionC.setText(mQuestion.getOptionC());
             tvOptionD.setText(mQuestion.getOptionD());
-            tvHint.setText(mQuestion.getHint());
+            tvHint.setText(getString(R.string.hint) + mQuestion.getHint());
         }
     }
 
@@ -171,8 +143,9 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
             }, 2000);
         } else {
             Toast.makeText(v.getContext(),
-                    "Try Again Wrong", Toast.LENGTH_SHORT)
+                    "Wrong, Try Again ", Toast.LENGTH_SHORT)
                     .show();
+            tvHint.setVisibility(View.VISIBLE);
         }
     }
 

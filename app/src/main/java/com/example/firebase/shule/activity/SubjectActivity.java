@@ -58,6 +58,7 @@ public class SubjectActivity extends AppCompatActivity implements SubjectContrac
             case R.id.logout_option:
                 logout();
                 return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
