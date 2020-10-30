@@ -1,6 +1,14 @@
 package com.example.firebase.shule.activity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.ArraySet;
 import android.util.Log;
 import android.view.View;
@@ -28,6 +36,7 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
     private TextView tvOptionB;
     private TextView tvOptionC;
     private TextView tvOptionD;
+    private TextView tvHint;
 
     public QuestionPresenter presenter;
     public ArraySet<Question> questionSet;
@@ -35,6 +44,7 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private ChildEventListener childEventListener;
+    private Drawable colorDrawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +53,13 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
         presenter = new QuestionPresenter(this);
         presenter.openRef();
         presenter.listenToFb();
-
         presenter.initializeFields();
+
+        int size = presenter.countItems();
+        assert size > 0;
+        for(Question mQuestion: questionSet) {
+            presenter.setQuestion(mQuestion);
+        }
     }
 
     @Override
@@ -54,40 +69,63 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
         tvOptionB = (TextView) findViewById(R.id.tvOptionB);
         tvOptionC = (TextView) findViewById(R.id.tvOptionC);
         tvOptionD = (TextView) findViewById(R.id.tvOptionD);
+        tvHint = (TextView) findViewById(R.id.tvHint);
+
+        colorDrawable = new Drawable() {
+            @Override
+            public void draw(@NonNull Canvas canvas) {
+
+            }
+
+            @Override
+            public void setAlpha(int alpha) {
+
+            }
+
+            @Override
+            public void setColorFilter(@Nullable ColorFilter colorFilter) {
+
+            }
+
+            @Override
+            public int getOpacity() {
+                return 0;
+            }
+        };
 
         tvOptionA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(),
-                        "'Option A' button clicked", Toast.LENGTH_SHORT)
-                        .show();
+                String answer = tvOptionA.getText().toString();
+                String hint = tvHint.getText().toString();
+                presenter.isAnswerCorrect(v, answer, hint);
             }
         });
 
         tvOptionB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(),
-                        "'Option B' button clicked", Toast.LENGTH_SHORT)
-                        .show();
+                String answer = tvOptionB.getText().toString();
+                String hint = tvHint.getText().toString();
+                presenter.isAnswerCorrect(v, answer, hint);
             }
         });
 
         tvOptionC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(),
-                        "'Option C' button clicked", Toast.LENGTH_SHORT)
-                        .show();
+                String answer = tvOptionC.getText().toString();
+                String hint = tvHint.getText().toString();
+                presenter.isAnswerCorrect(v, answer, hint);
             }
         });
 
         tvOptionD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(),
-                        "'Option D' button clicked", Toast.LENGTH_SHORT)
-                        .show();
+                String answer = tvOptionD.getText().toString();
+                String hint = tvHint.getText().toString();
+                presenter.isAnswerCorrect(v, answer, hint);
             }
         });
     }
@@ -106,20 +144,36 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
     }
 
     @Override
-    public void shouldSetQuestion() {
+    public void shouldSetQuestion(Question mQuestion) {
         if (questionSet != null && !questionSet.isEmpty()) {
-//            tvQuestion.setText(question.getQuestion());
-//            tvOptionA.setText(question.getOptionA());
-//            tvOptionB.setText(question.getOptionB());
-//            tvOptionC.setText(question.getOptionC());
-//            tvOptionD.setText(question.getOptionD());
+            tvQuestion.setText(mQuestion.getQuestion());
+            tvOptionA.setText(mQuestion.getOptionA());
+            tvOptionB.setText(mQuestion.getOptionB());
+            tvOptionC.setText(mQuestion.getOptionC());
+            tvOptionD.setText(mQuestion.getOptionD());
+            tvHint.setText(mQuestion.getHint());
         }
     }
 
     @Override
-    public boolean shouldCheckIfAnswerSelectedIsCorrect() {
-
-        return false;
+    public void shouldCheckIfAnswerSelectedIsCorrect(View v, String answer, String hint) {
+        if (hint == answer) {
+            Toast.makeText(v.getContext(),
+                    "You Got It", Toast.LENGTH_SHORT)
+                    .show();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent insertActivity = new Intent(AnswerActivity.this, SubjectActivity.class);
+                    startActivity(insertActivity);
+                }
+            }, 2000);
+        } else {
+            Toast.makeText(v.getContext(),
+                    "Try Again Wrong", Toast.LENGTH_SHORT)
+                    .show();
+        }
     }
 
     @Override
@@ -165,7 +219,6 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
             }
         };
         databaseReference.addChildEventListener(childEventListener);
-        
     }
 
     @Override
@@ -177,12 +230,6 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
     @Override
     protected void onResume() {
         super.onResume();
-        int size = presenter.countItems();
-        assert size > 0;
-        for(int i = 0; i < size; i++) {
-            presenter.setQuestion();
-            presenter.isAnswerCorrect();
-        }
         FirebaseUtil.attachListener();
     }
 }

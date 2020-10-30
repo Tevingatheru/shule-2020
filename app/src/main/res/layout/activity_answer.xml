@@ -22,7 +22,7 @@
         android:id="@+id/tvOptionA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CAN YOU SEE THE QUESTION"
+        android:text="Yes"
         android:paddingTop="@dimen/padding_standard"
         android:clickable="true"
         android:inputType="none"
@@ -35,7 +35,7 @@
         android:id="@+id/tvOptionB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CAN YOU SEE THE QUESTION"
+        android:text="No"
         android:paddingTop="@dimen/padding_standard"
         android:clickable="true"
         android:inputType="none"
@@ -48,7 +48,7 @@
         android:id="@+id/tvOptionC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CAN YOU SEE THE QUESTION"
+        android:text="Maybe"
         android:paddingTop="@dimen/padding_standard"
         android:clickable="true"
         android:inputType="none"
@@ -61,7 +61,7 @@
         android:id="@+id/tvOptionD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CAN YOU SEE THE QUESTION"
+        android:text="No"
         android:paddingTop="@dimen/padding_standard"
         android:clickable="true"
         android:inputType="none"
@@ -69,5 +69,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOptionC" />
+
+
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yes"
+        android:paddingTop="@dimen/padding_standard"
+        android:clickable="true"
+        android:inputType="none"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOptionD" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

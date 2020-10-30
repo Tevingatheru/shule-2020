@@ -85,7 +85,8 @@ public class Question implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        String s = super.toString();
+        String s = "question" + question + "OptionA" + optionA + "OptionB"
+                + optionB+ "OptionC" + optionC + "OptionD" + optionD;
         return s;
     }
 }

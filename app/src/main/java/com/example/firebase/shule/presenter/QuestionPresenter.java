@@ -1,5 +1,7 @@
 package com.example.firebase.shule.presenter;
 
+import android.view.View;
+
 import com.example.firebase.shule.contract.QuestionContract;
 import com.example.firebase.shule.model.Question;
 
@@ -13,16 +15,17 @@ public class QuestionPresenter implements QuestionContract.Presenter {
     }
 
     @Override
-    public void setQuestion() {
-        view.shouldSetQuestion();
+    public void setQuestion(Question mQuestion) {
+        if (mQuestion != null) {
+            view.shouldSetQuestion(mQuestion);
+        }
+        view.shouldSetQuestion(this.question);
     }
 
     @Override
-    public boolean isAnswerCorrect() {
-        return view.shouldCheckIfAnswerSelectedIsCorrect();
+    public void isAnswerCorrect(View v, String answer, String hint) {
+        view.shouldCheckIfAnswerSelectedIsCorrect(v, answer,hint);
     }
-
-
 
     @Override
     public void listenToFb() {
