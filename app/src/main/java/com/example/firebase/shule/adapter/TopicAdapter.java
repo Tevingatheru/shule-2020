@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firebase.shule.R;
-import com.example.firebase.shule.model.Question;
+import com.example.firebase.shule.activity.AnswerActivity;
 import com.example.firebase.shule.model.Topic;
 import com.example.firebase.shule.util.FirebaseUtil;
 import com.google.firebase.database.ChildEventListener;
@@ -133,7 +133,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
             int position = getAdapterPosition();
             Log.d("Position: ", "Position Clicked is: " + position);
             Topic topic = topicList.get(position);
-            Intent intent = new Intent(v.getContext(), Question.class);
+            Intent intent = new Intent(v.getContext(), AnswerActivity.class);
             intent.putExtra("Topic", topic);
             v.getContext().startActivity(intent);
         }
