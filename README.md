@@ -10,9 +10,10 @@
 Was created to help users learn what they need 
 and at their own tempo.
 
+[AnswerActivity](/AnswerActivity.jpg?raw=true)
+
 
 # Shout out
 The idea was inspired by https://www.duolingo.com/
 
  
-[alt text](/AnswerActivity)
