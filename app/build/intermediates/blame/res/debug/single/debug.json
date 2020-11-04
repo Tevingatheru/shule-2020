@@ -4,12 +4,12 @@
         "source": "C:\\Users\\User\\Documents\\LINUX\\google\\shule\\app\\src\\main\\res\\drawable\\chemistry.jpg"
     },
     {
-        "merged": "C:\\Users\\User\\Documents\\LINUX\\google\\shule\\app\\build\\intermediates\\res\\merged\\debug\\layout_topic_rv_row.xml.flat",
-        "source": "C:\\Users\\User\\Documents\\LINUX\\google\\shule\\app\\src\\main\\res\\layout\\topic_rv_row.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\Documents\\LINUX\\google\\shule\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\User\\Documents\\LINUX\\google\\shule\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\LINUX\\google\\shule\\app\\build\\intermediates\\res\\merged\\debug\\layout_topic_rv_row.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\LINUX\\google\\shule\\app\\src\\main\\res\\layout\\topic_rv_row.xml"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\LINUX\\google\\shule\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_exam.xml.flat",
