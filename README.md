@@ -18,5 +18,3 @@ and at their own tempo.
 # Shout out
 The idea was inspired by https://www.duolingo.com/
 
- 
-[alt text](/AnswerActivity)

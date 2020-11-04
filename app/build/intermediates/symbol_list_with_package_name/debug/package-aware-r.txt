@@ -2644,6 +2644,7 @@ string google_crash_reporting_api_key
 string google_storage_bucket
 string hello_world
 string hide_bottom_view_on_scroll_behavior
+string hint
 string icon_content_description
 string image_of_subject
 string image_of_topic
