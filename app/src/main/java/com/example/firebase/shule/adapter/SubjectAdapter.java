@@ -1,5 +1,6 @@
 package com.example.firebase.shule.adapter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -33,6 +34,17 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
     public static DatabaseReference databaseReference;
     private ChildEventListener childEventListener;
     private static ArrayList<Subject> subjectList;
+
+
+
+    public static class ViewHolder extends RecyclerView.ViewHolder{
+        public TextView textView;
+        public ViewHolder(TextView v) {
+            super(v);
+            textView = v;
+
+        }
+    }
 
     public SubjectAdapter() {
         listenToFb();
@@ -84,6 +96,7 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
         try {
             view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.subject_rv_row, parent, false);
+
         } catch (RuntimeException e) {
             throw new RuntimeException("error.inflating.view", e);
         }
@@ -119,8 +132,14 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
 
         public  SubjectViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvSubject = (TextView) itemView.findViewById(R.id.row_subject_tv);
-            ivImageSubject = (ImageView) itemView.findViewById(R.id.row_subject_iv);
+            tvSubject = (TextView) itemView.findViewById(R.id.subject1);
+            ivImageSubject = (ImageView) itemView.findViewById(R.id.imageView1);
+
+            tvSubject = (TextView) itemView.findViewById(R.id.subject2);
+            ivImageSubject = (ImageView) itemView.findViewById(R.id.imageView2);
+
+            tvSubject = (TextView) itemView.findViewById(R.id.subject3);
+            ivImageSubject = (ImageView) itemView.findViewById(R.id.imageView3);
 
             itemView.setOnClickListener(this);
         }

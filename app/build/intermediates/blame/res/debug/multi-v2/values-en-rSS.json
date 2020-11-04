@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\project\\shule\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rSS\\values-en-rSS.xml",
+            "outputFile": "C:\\Users\\User\\Documents\\LINUX\\google\\shule\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rSS\\values-en-rSS.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\tevin\\.gradle\\caches\\transforms-2\\files-2.1\\37dde63cd33492b0a63c052db8672967\\jetified-twitter-core-3.0.0\\res\\values-en-rSS\\values-en-rSS.xml",
+                    "source": "C:\\Gradle\\gradle-6.6.1\\bin\\caches\\transforms-2\\files-2.1\\37dde63cd33492b0a63c052db8672967\\jetified-twitter-core-3.0.0\\res\\values-en-rSS\\values-en-rSS.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
