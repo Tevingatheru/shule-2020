@@ -11,15 +11,16 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     public QuestionPresenter(QuestionContract.View view) {
         this.view = view;
-        question = new Question("data question", "01","02","02","03","04");
+        question = new Question("data question", "01","01","02","03","04");
     }
 
     @Override
     public void setQuestion(Question mQuestion) {
         if (mQuestion != null) {
             view.shouldSetQuestion(mQuestion);
+        } else {
+            view.shouldSetQuestion(this.question);
         }
-        view.shouldSetQuestion(this.question);
     }
 
     @Override

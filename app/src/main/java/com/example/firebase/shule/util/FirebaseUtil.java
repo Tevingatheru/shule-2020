@@ -91,6 +91,58 @@ public class FirebaseUtil {
         databaseReference = firebaseDatabase.getReference().child(ref);
     }
 
+    public static void getQuestions(){
+        Log.i("Question Adapter: ", "Attempt to get Question");
+
+        DatabaseReference reference =  FirebaseDatabase.getInstance().getReference().child("question");
+
+        ChildEventListener childEventListener = new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Question question;
+                try {
+                    question = snapshot.getValue(Question.class);
+                } catch (RuntimeException e) {
+                    Log.e("Question Adapter: ", e.getMessage());
+                    throw new RuntimeException(e.getMessage(), e);
+                }
+
+                Log.i("Question Adapter: ", question.getQuestion());
+                question.setId(snapshot.getKey());
+                Log.i("Question", question.getId());
+                questionUtilList.add(question);
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        };
+//        questionSet = FirebaseUtil.questionUtilList;
+        reference.addChildEventListener(childEventListener);
+        if(questionUtilList.isEmpty()){
+            getQuestions();
+        }
+        Log.i("Question Adapter: ", "Set On Child Listener");
+
+    }
+
     private static void checkMember(String userId) {
         FirebaseUtil.isMember = true;
         DatabaseReference reference = firebaseDatabase.getReference().child("administrators").child(userId);
