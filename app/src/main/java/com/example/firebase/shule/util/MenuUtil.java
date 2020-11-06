@@ -8,6 +8,9 @@ import androidx.annotation.NonNull;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 
+/**
+ * This class is a util for {@link android.view.Menu} view
+ */
 public class MenuUtil {
 
     public MenuUtil() {

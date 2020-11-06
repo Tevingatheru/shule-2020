@@ -24,6 +24,9 @@ import com.google.firebase.storage.StorageReference;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * This class is a util for {@link FirebaseDatabase} ref
+ */
 public class FirebaseUtil {
     private static final int RC_SIGN_IN = 123;
 

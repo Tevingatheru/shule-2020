@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firebase.shule.R;
 import com.example.firebase.shule.activity.AnswerActivity;
+import com.example.firebase.shule.contract.TopicContract;
 import com.example.firebase.shule.model.Topic;
 import com.example.firebase.shule.util.FirebaseUtil;
 import com.google.firebase.database.ChildEventListener;
@@ -130,12 +131,28 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
 
         @Override
         public void onClick(View v) {
-            int position = getAdapterPosition();
-            Log.d("Position: ", "Position Clicked is: " + position);
-            Topic topic = topicList.get(position);
-            Intent intent = new Intent(v.getContext(), AnswerActivity.class);
-            intent.putExtra("Topic", topic);
-            v.getContext().startActivity(intent);
+            TopicContract.Presenter presenter = new TopicContract.Presenter() {
+                @Override
+                public void openReference() {
+
+                }
+
+                @Override
+                public void setView() {
+
+                }
+
+                @Override
+                public void startExamActivity() {
+                    int position = getAdapterPosition();
+                    Log.d("Position: ", "Position Clicked is: " + position);
+                    Topic topic = topicList.get(position);
+                    Intent intent = new Intent(v.getContext(), AnswerActivity.class);
+                    intent.putExtra("Topic", topic);
+                    v.getContext().startActivity(intent);
+                }
+            };
+            presenter.startExamActivity();
         }
 
         public void bind(Topic topic) {

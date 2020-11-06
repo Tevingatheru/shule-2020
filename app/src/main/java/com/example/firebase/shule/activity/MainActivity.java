@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void shouldStartSubjectActivity() {
-        Intent insertActivity = new Intent(MainActivity.this, AnswerActivity.class);
+        Intent insertActivity = new Intent(MainActivity.this, TopicActivity.class);
 
         handler = new Handler();
         handler.postDelayed(new Runnable() {

@@ -3,6 +3,10 @@ package com.example.firebase.shule.presenter;
 import com.example.firebase.shule.contract.ExamContract;
 import com.example.firebase.shule.model.Exam;
 
+/**
+ * This is the {@link com.example.firebase.shule.contract.ExamContract.Presenter}
+ * for the {@link com.example.firebase.shule.activity.ExamActivity}
+ */
 public class ExamPresenter  implements ExamContract.Presenter {
 
     ExamContract.View view;

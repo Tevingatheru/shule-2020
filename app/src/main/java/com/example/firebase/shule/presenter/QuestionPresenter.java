@@ -5,13 +5,17 @@ import android.view.View;
 import com.example.firebase.shule.contract.QuestionContract;
 import com.example.firebase.shule.model.Question;
 
+/**
+ * This is the {@link com.example.firebase.shule.contract.TopicContract.Presenter}
+ * for the {@link com.example.firebase.shule.activity.TopicActivity}
+ */
 public class QuestionPresenter implements QuestionContract.Presenter {
     QuestionContract.View view;
     Question question;
 
     public QuestionPresenter(QuestionContract.View view) {
         this.view = view;
-        question = new Question("data question", "01","01","02","03","04");
+        question = new Question("data question", "01","01","02","03","04","testTopic");
     }
 
     @Override

@@ -4,14 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.AnswerActivity">
+    android:layout_margin="@dimen/margin_standard"
+    tools:context=".activity.AnswerActivity"
+    >
 
     <TextView
         android:id="@+id/tvQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CAN YOU SEE THE QUESTION"
+        android:hint="CAN YOU SEE THE  \' LOCAL'\ TEST QUESTION?"
         android:inputType="none"
+        android:textAlignment="center"
+
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,10 +26,11 @@
         android:id="@+id/tvOptionA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Yes"
-        android:paddingTop="@dimen/padding_standard"
         android:clickable="true"
+        android:hint="Yes"
         android:inputType="none"
+        android:paddingTop="@dimen/padding_standard"
+        android:textAlignment="center"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,10 +40,11 @@
         android:id="@+id/tvOptionB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No"
+        android:hint="No"
         android:paddingTop="@dimen/padding_standard"
         android:clickable="true"
         android:inputType="none"
+        android:textAlignment="center"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,10 +54,11 @@
         android:id="@+id/tvOptionC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Maybe"
+        android:hint="Maybe"
         android:paddingTop="@dimen/padding_standard"
         android:clickable="true"
         android:inputType="none"
+        android:textAlignment="center"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,10 +68,11 @@
         android:id="@+id/tvOptionD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No"
+        android:hint="No"
         android:paddingTop="@dimen/padding_standard"
         android:clickable="true"
         android:inputType="none"
+        android:textAlignment="center"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,16 +80,30 @@
 
 
     <TextView
-        android:id="@+id/tvHint"
+        android:id="@+id/tvActualAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Yes"
-        android:paddingTop="@dimen/padding_standard"
         android:clickable="true"
+        android:hint="Yes"
         android:inputType="none"
+        android:paddingTop="@dimen/padding_standard"
+        android:textAlignment="viewEnd"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOptionD" />
+
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_standard"
+        android:clickable="true"
+        android:inputType="none"
+        android:text="Hint: "
+        android:textAlignment="viewStart"
+
+        app:layout_constraintEnd_toStartOf="@+id/tvActualAnswer"
         app:layout_constraintTop_toBottomOf="@+id/tvOptionD" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,10 @@ package com.example.firebase.shule.presenter;
 
 import com.example.firebase.shule.contract.TopicContract;
 
+/**
+ * This is the {@link com.example.firebase.shule.contract.TopicContract.Presenter}
+ * for the {@link com.example.firebase.shule.activity.TopicActivity}
+ */
 public class TopicPresenter implements TopicContract.Presenter {
     TopicContract.View view;
 

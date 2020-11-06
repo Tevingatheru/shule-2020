@@ -12,11 +12,12 @@ public class Question implements Serializable {
     private String optionB;
     private String optionC;
     private String optionD;
+    private String topicId;
 
     public Question() {
     }
 
-    public Question(String question, String hint, String optionA, String optionB, String optionC, String optionD) {
+    public Question(String question, String hint, String optionA, String optionB, String optionC, String optionD, String topicId) {
         this.id = id;
         this.question = question;
         this.hint = hint;
@@ -24,6 +25,7 @@ public class Question implements Serializable {
         this.optionB = optionB;
         this.optionC = optionC;
         this.optionD = optionD;
+        this.topicId = topicId;
     }
 
     public String getId() {
@@ -82,11 +84,19 @@ public class Question implements Serializable {
         this.optionD = optionD;
     }
 
+    public String getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(String topicId) {
+        this.topicId = topicId;
+    }
+
     @NonNull
     @Override
     public String toString() {
-        String s = "\nquestion" + question + "\nOptionA" + optionA + "\nOptionB"
-                + optionB+ "\nOptionC" + optionC + "\nOptionD" + optionD +"\nHint"+ hint;
+        String s = "\nquestion " + question + "\nOptionA " + optionA + "\nOptionB "
+                + optionB+ "\nOptionC " + optionC + "\nOptionD " + optionD +"\nHint "+ hint;
         return s;
     }
 }
