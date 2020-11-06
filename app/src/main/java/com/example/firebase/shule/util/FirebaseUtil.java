@@ -137,7 +137,6 @@ public class FirebaseUtil {
 
             }
         };
-//        questionSet = FirebaseUtil.questionUtilList;
         reference.addChildEventListener(childEventListener);
         if(questionUtilList.isEmpty()){
             getQuestions();

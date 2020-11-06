@@ -26,6 +26,5 @@ public class SubjectPresenter implements SubjectContract.Presenter {
 
     @Override
     public void startTopicActivity() {
-//        view.shouldTopicActivity();
     }
 }

@@ -175,11 +175,9 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
                     throw new RuntimeException(e.getMessage(), e);
                 }
 
-
                 questionArrayList.add(questionFb[0]);
                 if (questionArrayList.size() > 0) {
                     System.out.println(questionFb[0]);
-
                     int size = presenter.countItems();
                     Log.i("Answer: ", "Size Of Question List" + size);
                     presenter.setQuestion(questionFb[0]);
