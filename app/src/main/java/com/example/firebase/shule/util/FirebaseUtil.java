@@ -57,10 +57,16 @@ public class FirebaseUtil {
         firebaseAuth.removeAuthStateListener(authStateListener);
     }
 
+    /**
+     * This method checks authorization status
+     * if the member is not logged in then then lead to login component
+     * @return
+     */
     private static FirebaseAuth.AuthStateListener checkAuth() {
         return new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                Log.d("Check Authorization","\nAuth status: " + firebaseAuth.getCurrentUser().getUid());
                 if(firebaseAuth.getCurrentUser() == null) {
                     FirebaseUtil.signIn();
                     Toast.makeText(caller.getBaseContext(), "Welcome", Toast.LENGTH_LONG).show();
@@ -148,11 +154,12 @@ public class FirebaseUtil {
     private static void checkMember(String userId) {
         FirebaseUtil.isMember = true;
         DatabaseReference reference = firebaseDatabase.getReference().child("administrators").child(userId);
+        Log.i("Check Member","\nReference: " + reference + "\nUserId: " + userId +"\nMember Logged In: " + FirebaseUtil.isMember );
+
         ChildEventListener listener = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                FirebaseUtil.isMember = false;
-                Log.d("Member","Member Logged In: " + false);
+
             }
 
             @Override
@@ -178,6 +185,10 @@ public class FirebaseUtil {
         reference.addChildEventListener(listener);
     }
 
+    /**
+     * This method creates a list of sign in providers then create a sign in intent and launches it
+     * with the appropriate providers.
+     */
     private static void signIn() {
         // Choose authentication providers
         List<AuthUI.IdpConfig> providers = Arrays.asList(

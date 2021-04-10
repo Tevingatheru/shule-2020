@@ -24,7 +24,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-
 public class AnswerActivity extends AppCompatActivity implements QuestionContract.View {
     TextView tvQuestion;
     TextView tvOptionA;
@@ -130,7 +129,7 @@ public class AnswerActivity extends AppCompatActivity implements QuestionContrac
 
     @Override
     public void shouldCheckIfAnswerSelectedIsCorrect(View v, String answer, String hint) {
-        if (hint == answer) {
+        if (hint.equals(answer)) {
             Toast.makeText(v.getContext(),
                     "You Got It", Toast.LENGTH_SHORT)
                     .show();

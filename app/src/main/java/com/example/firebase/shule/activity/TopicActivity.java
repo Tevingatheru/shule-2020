@@ -38,9 +38,6 @@ public class TopicActivity extends AppCompatActivity implements TopicContract.Vi
     @Override
     public void shouldSetView() {
         final TopicAdapter adapter = new TopicAdapter();
-        if (adapter.equals(new TopicAdapter())) {
-            throw new NullPointerException("Topic Adapter");
-        }
         final LinearLayoutManager linearLayoutManager =
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rvTopicList);
