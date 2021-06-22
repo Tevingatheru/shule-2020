@@ -4,17 +4,6 @@
 
 title ERD
 
-entity "exam" as E {
-    + id (PK)
-    --
-    + question_id (FK)
-    --
-    * date_created
-    * created_by
-    date_modified
-    modified_by
-}
-
 entity "subject" as S {
     + id (PK)
     --
@@ -23,106 +12,194 @@ entity "subject" as S {
     * name
     * date_created
     * created_by
+    --
     date_modified
     modified_by
+    --
 }
+
+note right 
+- a suject is unique
+- subject have  rules
+
+end note
+
+entity "subject_topic" as ST {
+    + id (PK)
+    --
+    + subject_id (FK)
+    + topic_id (FK)
+    --
+}
+
 
 entity "topic" as T {
     + id (PK)
     --
-    + exam_id (FK)
-    --
     * name
     * date_created
     * created_by
+    --
     date_modified
     modified_by
+    --
 }
+
+note top 
+- a topic is unique
+- topic have  rules
+
+end note
+
+entity "manager" as M {
+    + id (PK)
+    --
+    + type_id (FK)
+    + rule_manager_id (FK)
+    + user_subject_id (FK)
+    --
+}
+
+note right 
+- relation bewteen rules and users
+- 1 manager can have many rule_manager
+- user_subject_id is a nullable field
+- only needed when if any rule applies
+end note
+
+entity "topic_question" as TQ {
+    + id (PK)
+    --
+    + question_id (FK)
+    + topic_id (FK)
+    --
+  }
 
 entity "question" as Q {
     + id (PK)
     --
     * question
+    * answer
+    * date_created
+    * created_by
+    --
+    date_modified
+    modified_by
+    --
+}
+
+note right 
+- a question has an option
+- a question has many options
+- question are unique
+end note
+
+entity "options_list" as optionsList {
+    + id (PK)
+    --
+    + question_id (FK)
+    + option_id (FK)
+    --
+}
+
+entity "option" as option {
+    + id (PK)
+    --
+    * uuid
     * optionA
     * optionB
     * optionC
     * optionD
     * hint
     * date_created
-    * created_by
-    date_modified
-    modified_by
+    * created_by  
+    --
 }
 
-entity "level" as L {
+note right 
+- an option has a question
+- an option has may questions
+- options are unique
+- uuid allow to uniquely id options
+  -- arrangr alphabeticlly and numerially
+  -- generate uuid
+  -- compare to find unique
+- fields must be immutable
+end note
+
+entity "grade_rule" as grade_rule {
     + id (PK)
     --
-    * age
-    * name  
-    description
+    * name
+    * grade    
+    --
 }
+
+entity "proficiency_rule" as proficiency_rule {
+    + id (PK)
+    --
+    * name
+    * proficiency    
+    --
+}
+
 
 entity "user" as U {
     + id (PK)
     --
-    * name  
+    * name 
+    --
 }
 
-entity "user_subject" as U_S {
+entity "user_subject/course" as U_S {
     + id (PK)
     --
     + subect_id (FK)  
     + user_id (FK)
     --
-    + activationDate
-    
+    * activationDate
+    --
+    grade 
+    --
 }
 
-entity "user_topic_level" as SYLLABUS {
+entity "rule_manager" as RM {
     + id (PK)
     --
-    + topic_id (FK)  
-    + level_id (FK)
-    + user_id (FK)
+    + rule_id (FK)
     --
-    * name  
-    description
+    * rule_type 
+    --
 }
 
-entity "curriculum" as C {
+entity "management_type" as MT {
     + id (PK)
     --
-    + user_id (FK)  
-    + subject_id (FK)
-    + topic_id (FK)
-  }
-
-entity "examination" as EXAMINATION {
-  + id (PK)
-  --
-  + exam_id (FK)
-  + user_id (FK)
-  --
-  datePassed
+    * name
+    --
 }
 
-S ||..|{ T
-T ||..|| E
-
-E ||..|{ Q
-U ||..|| U_S
-S ||..|| U_S
-
-T ||..o| SYLLABUS
-L ||..o| SYLLABUS
-U ||..o| SYLLABUS 
+S ||..o| U_S
+S ||..o{ ST
   
-C }o..|| U
-C |o..|| S
-C |o..|{ T
+T }|..o| ST
 
-U ||..|{ EXAMINATION 
-E |o..|| EXAMINATION
+U ||..o{ U_S
+
+U_S ||..o| M
+
+optionsList ||..|| Q
+optionsList }|..|{ option
+
+TQ ||..|{ Q
+TQ }|..|| T
+
+M ||..o| RM
+
+MT ||..o| M
+
+RM |o..|{ grade_rule
+RM |o..|{ proficiency_rule
 
 @enduml
 ```
